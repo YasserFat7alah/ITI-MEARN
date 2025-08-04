@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="caution">
+        purpose is to show functionality. one video was used.
+    </div>
+    <section id="mainwrapper">
+        <section id="controlswrapper">
+            <div class="play-pause">
+                <input type="button" value="<<" onclick="backwardfun();" />
+                <input type="button" value="Play" id="playbtn" onclick="playpausefun(event);" />
+                <input type="button" value=">>" onclick="forwardfun();" />
+                <input type="button" value="Slow" onclick="slowmotionfun();" />
+            </div>
+
+            <div class="media-size">
+                <input type="button" value="size" onclick="changemdiasize(event);" />
+            </div>
+
+            
+
+            <div class="seekbar">
+                <input type="range" min="0" max="100" step="any" value="0" id="seekbar" onchange="changeseekbarfun(event);" />
+            </div>
+
+            <div class="mute-loop">
+                <input type="checkbox" onchange="mutefun();" /> Mute
+                <input type="checkbox" onchange="LoopFun();" /> Loop
+            </div>
+
+            <div class="volume">
+                Volume:
+                <input type="range" min="0" max="1" step="0.1" value="0.5" onchange="changemediavolume(event);" />
+            </div>
+
+        </section>
+
+        <section class="videosmap">
+            <div class="videotitle">Video 1</div>
+            <div class="videotitle">Video 2</div>
+            <div class="videotitle">Video 3</div>
+            <div class="videotitle">Video 4</div>
+            <div class="videotitle">Video 5</div>
+            <div class="videotitle">Video 6</div>
+            <div class="videotitle">Video 7</div>
+            <div class="videotitle">Video 8</div>
+            <div class="videotitle">Video 9</div>
+            <div class="videotitle">Video 10</div>
+            <div class="videotitle">Video 11</div>
+            <div class="videotitle">Video 12</div>
+            <div class="videotitle">Video 13</div>
+        </section>
+
+        <section id="videowrapper">
+            <!--<video src="Video/universe.mp4" width="400" height="400"  id="myvideo"/>-->
+            <video src="universe.mp4"  id="myvideo" ontimeupdate="moveSeekbar()" />
+        </section>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>

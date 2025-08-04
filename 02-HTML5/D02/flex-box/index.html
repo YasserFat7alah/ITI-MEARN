@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>flexbox task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Admission</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">AboutUs</a></li>
+        </ul>
+        <section class="intro">
+            <h3>ITP Tracks For ITI Tanta Branch</h3>
+            <button>Register</button>
+        </section>
+   </div>
+
+    <div>
+        <section class="iti">
+            <div class="title">
+                <h2>ITI Locations</h2>
+                <p>
+                    ITI Main locations all over the country.
+                </p>
+            </div>
+            <div class="map">
+                <div class="map-pre">
+                    <img src="map.png" alt="">
+                </div>
+                <div class="loc-wrapper">
+                    <div class="locations">
+                        <div class="loc" id="main">ITI-Smart Village</div>
+                        <div class="loc other">ITI-Tanta</div>
+                        <div class="loc other">ITI-Mansoura</div>
+                        <div class="loc other">ITI-Cairo</div>
+                        <div class="loc other">ITI-Alexanderia</div>
+                        <div class="loc other">ITI-Aswan</div>
+                        <div class="loc other">ITI-Minya</div>
+                        <div class="loc other">ITI-Menofiya</div>
+                    </div>
+                    <div class="info">
+                        <div>
+                            <input type="checkbox"  id='red' onchange="main()"> main branch
+                        </div>
+                        <div>
+                            <input type="checkbox" id ='black' onchange="others()"> other branches
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="left">
+            <h2>Contact Us</h2>
+            <p>Dakahlia - Dekernes - Alzuhoor Street</p>
+            <p>(+20)10 000 000 00</p>
+            <p>YasserFat7alah@gmail.com</p>
+        </div>
+
+        <div class="right">
+            <h2>Follow Us</h2>
+            <div class="foot-i">
+                <img src="icon.png" alt="">
+                <img src="icon.png" alt="">
+                <img src="icon.png" alt="">
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        function main() {
+            let maind = document.getElementById('main');
+            maind.classList.toggle('main')
+        }
+
+        function others() {
+            let others = document.querySelectorAll('.other');
+
+            for (let i = 0; i < others.length; i++) {
+                others[i].classList.toggle('other-branch')
+                
+            }
+            maind.classList.toggle('main')
+        }
+    </script>
+</body>
+</html>

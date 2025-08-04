@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Task</title>
+    <style>
+        .wrapper {
+            width: 850px;
+            padding: 10px ;
+            margin: 10px auto;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .toolbar {
+            width: 100%;
+            background-color: rgb(221, 219, 219);
+            padding: 20px 0px;
+        }
+        input {
+            width: 80px;
+            height: 30px;
+            margin: 0 80px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        input:hover {
+            transform: scale(1.1);
+        }
+
+        #play {
+            background-color: lightgreen;
+        }
+
+        #pause {
+            background-color: rgb(220, 255, 122);
+        }
+
+        #stop {
+            background-color: rgb(233, 30, 3);
+        }
+
+        input[disabled]{
+            background-color: lightgray !important;
+        }
+
+        input[disabled]:hover {
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        
+
+        .area {
+            width: 100%;
+            height: 600px;
+            padding: 80px 30px;
+            position: relative;
+        }
+
+        .animate {
+            animation-name: move;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+        }
+
+        .animate:hover {
+            animation-play-state: paused !important ;
+            transform: scale(1.4) translate(0,0);
+        }
+
+
+        
+
+        #square {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+         /* #square:hover {
+            
+            animation-play-state: paused ;
+            transform: scale(2.1) ;
+        } */
+
+        
+
+        .pause-animation{
+            animation-play-state: paused !important;
+        }
+       
+
+        @keyframes move {
+            0% {
+                background-color: red;
+            }
+
+            25% {
+                background-color: green;
+                left: 700px;
+                top: 20px;
+            }
+
+            50% {
+                background-color: blue;
+                top: 700px;
+                left: 700px;
+            }
+
+            75% {
+                background-color: yellow;
+                left: 20px;
+                top: 700px;
+            }
+
+            100% {
+                background-color: red;
+                top: 20px;
+                left: 20px;
+            }
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="toolbar">
+            <input type="button" value="play" id="play">
+
+            <input type="button" value="pause" id="pause" disabled>
+
+            <input type="button" value="stop" id="stop" disabled>
+        </div>
+            <div class="area">
+                <div id="square"></div>
+            </div>
+        </div>
+
+        <script>
+            let play = document.getElementById('play');
+            let pause = document.getElementById('pause');
+            let stopa =  document.getElementById('stop');
+
+            let square = document.getElementById('square');
+
+            play.addEventListener('click' , ()=>{
+                square.classList.add('animate');
+                pause.disabled =false;
+                stopa.disabled = false;
+                play.disabled = true;
+            })
+
+            pause.addEventListener('click' , ()=>{
+                square.classList.toggle('pause-animation'); 
+                stopa.disabled = false;
+                play.disabled = true;
+            })
+
+            stopa.addEventListener('click' , ()=>{
+                square.classList.remove('animate');
+                pause.disabled =true;
+                stopa.disabled = true;
+                play.disabled = false;
+            })
+
+            /* square.addEventListener('pointerenter',()=>{
+                square.classList.add('pause-animation');
+                square.style.transform = "scale(1.5) ";
+             });
+
+             square.addEventListener('pointerleave',()=>{
+                square.classList.remove('pause-animation');
+                square.style.transform = "scale(1)";
+             }); */
+            
+        </script>
+</body>
+</html>

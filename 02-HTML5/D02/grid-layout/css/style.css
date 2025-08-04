@@ -1,0 +1,157 @@
+/* RESETTER */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s ease;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* MAIN WRAPPER */
+.wrapper { 
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    overflow: hidden;
+    
+
+}
+
+img {
+    height: 100%;
+}
+
+/* ASIDE SECTION */
+aside {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+    gap: 30px;
+}
+
+aside h2 {
+    padding-bottom: 10px;
+}
+    /* LOGO */
+aside h1 {
+    font-size: 80px;
+    cursor: pointer;
+}
+
+aside h1 span {
+    color: #ca993e;
+    
+}
+
+    /* LINKS */
+aside nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.aside-nav li {
+    margin-bottom: 8px;
+}
+
+.aside-nav li a {
+    color: black;
+}
+
+.aside-nav li a:hover {
+    color: #ca993e;
+}
+
+    /* SOCIAL MEDIA LINKS  */
+.social {
+    font-size: 30px;
+    
+}
+
+.social i:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    color: #ca993e;
+}
+
+    /* TEXT WIDGET */
+
+.txt p {
+    width: 80%;
+}
+
+    /* FLicker */
+.img-previews {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.sm-wrapper {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+/* MAIN SECTION */
+main {
+    display: grid;
+    grid-template-rows: 0.15fr 2fr;
+
+}
+
+/* MAIN NAV */
+header {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    background-color: #ca993e;
+}
+
+header ul {
+    display: flex;
+    margin: 0 16px;
+    gap: 16px;
+    
+}
+
+header ul li a {
+    font-weight: bold;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+header ul li a:hover,
+ .active {
+    background-color: #af883e;
+}
+
+/* MAIN SECTION */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: hidden;
+}
+
+
+
+.lg-wrapper :hover {
+    overflow: visible;
+    transform: scale(1.2);
+    z-index: 0;
+}
+
+.gallery img {
+    width: 100%;
+}

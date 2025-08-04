@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 1rem;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+.subject {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.subject h2 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+.day {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.day h3 {
+  margin: 0.5rem 0;
+  color: #1e40af;
+}
+
+.task-links a {
+  display: inline-block;
+  margin: 0.3rem 0.5rem 0.3rem 0;
+  padding: 0.4rem 0.8rem;
+  background: #e8f0fe;
+  border-radius: 5px;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.task-links a:hover {
+  background-color: #c6dcfc;
+}

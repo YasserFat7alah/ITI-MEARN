@@ -1,0 +1,143 @@
+/* Resetter */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 1s ease;
+}
+
+/* Main Wrapper */
+
+.wrapper {
+    height: 800px;
+    margin: 40px 90px;
+    border-radius: 10px ;
+    border: 8px solid yellow;
+    box-shadow: 10px 10px 30px rgb(244, 34, 252) , 30px 30px 200px inset lightseagreen;
+    overflow: hidden;
+    
+    
+}
+
+.wrapper:hover {
+    transform: skew(3deg, 0 );
+    box-shadow: 10px 10px 30px blue , 30px 30px 200px inset lightseagreen;
+}
+
+.wrapper:active{
+    transform: scale(0.7);
+} 
+
+/* .shrink , .shrink:hover{
+    transform: scale(0.7);
+} */
+
+
+
+/* Aside */
+aside {
+    
+    float: left;
+    width: 400px;
+    height: 770px;
+    margin: 10px 30px;
+    padding: 10px;
+    border: 6px solid black;
+    border-radius: 10px;
+    column-count: 3;
+    text-align: center;
+    column-rule: 2px solid red;
+    box-shadow: 30px 30px 160px inset chartreuse;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+/* main */
+
+main {
+    height: 770px;
+    margin: 10px 30px;
+    padding: 10px;
+    border: 6px solid rgb(0, 17, 255);
+    text-align: center;
+    border-radius: 10px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    
+}
+
+.imgwrapper {
+    width: 200px;
+    height: 200px;
+    margin: 28px;
+    border: 3px solid rgb(0, 17, 255);
+    box-shadow: 8px 10px 10px purple;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imgwrapper:hover {
+    transform: scale(1.5);
+    border-style: double;
+    box-shadow: 8px 10px 10px yellow;
+}
+
+.imgwrapper:active {
+    transform: scale(2.5);
+     box-shadow: 8px 10px 10px rgb(255, 17, 0);
+}
+
+img {
+    width: 100%;
+}
+
+p:hover {
+text-decoration: underline;
+}
+
+p:nth-child(2){
+    display: inline;
+    background-color: red;
+}
+
+p:nth-child(2):hover{
+    background-color: rgb(255, 153, 0);
+    
+}
+
+p:nth-child(2):active{
+    background-color: rgb(0, 156, 0);
+    
+}
+
+
+@media (max-width : 1000px) {
+
+    aside {
+        width: 250px;
+        column-rule: none;
+    }
+
+    .wrapper:active,
+    .wrapper:hover{
+        transform: scale(1);
+    } 
+    
+    
+    .imgwrapper{
+        transform: rotate(60deg);
+    }
+
+    .imgwrapper:hover {
+        box-shadow: 8px 10px 10px orange;
+    }
+
+    .imgwrapper:active {
+        border-style: dashed;
+    }
+
+    
+}
+

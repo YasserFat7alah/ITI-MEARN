@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: wheat;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+}
+
+.caution {
+    background-color: rgb(255, 238, 0);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+#mainwrapper{
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    background-color: black;
+}
+#controlswrapper{
+    width: 75%;
+    display: flex;
+    height: 40px;
+    gap: 12px;
+    margin: 0 12px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -100px;
+    right: 0px;
+}
+
+#mainwrapper:hover #controlswrapper {
+    bottom: 0;
+}
+
+
+
+.play-pause, .seekbar, .mute-loop,
+ .volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#playbtn {
+    width: 50px;
+}
+
+.seekbar {
+    flex-grow: 1;
+}
+
+.seekbar input {
+    width: 100%;  
+}
+
+
+
+input {
+    background-color: rgb(20, 20, 20);
+    border: none;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+input:hover {
+    background-color: rgb(41, 41, 41);
+    cursor: pointer;
+    user-select: none;
+}
+
+#videowrapper{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videosmap {
+    display: flex   ;
+    flex-direction: column;
+    gap: 8px;
+    height: 90%;
+}
+
+.videotitle {
+    width: 250px;
+    height: 80px;
+    background-color: rgb(8, 8, 8);
+    padding: 10px;
+    
+    transition: all 0.5s;
+}
+
+.videotitle:hover {
+background-color: rgb(20, 20, 20);
+cursor: pointer;
+user-select: none;
+}

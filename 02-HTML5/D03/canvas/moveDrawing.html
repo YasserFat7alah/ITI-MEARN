@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>move-Drawing</title>
+</head>
+<body>
+    <canvas id="canvas">
+        Sorry, upadte your browser and try again
+    </canvas>
+
+
+    <script>
+        window.addEventListener('load', () =>{
+            let canvas = document.getElementById('canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let context = canvas.getContext('2d');
+            let draw = false;
+
+            canvas.addEventListener('mousedown', e => draw= true);
+            canvas.addEventListener('mouseup', e => draw= false);
+
+        canvas.addEventListener('mousemove', e => {
+            if(draw){
+                context.fillStyle = 'blue';
+                context.beginPath();
+                context.fillRect(e.clientX-20, e.clientY-20, 20, 20);
+                context.fill();
+                context.closePath();
+            }
+        })
+        })
+    </script>
+</body>
+</html>

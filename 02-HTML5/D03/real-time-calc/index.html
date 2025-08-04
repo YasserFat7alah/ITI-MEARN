@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Calculator</title>
+    <style>
+        .wrapper {
+            margin: 200px auto;
+            padding: 16px;
+            width:80vw ;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            border: 6px solid red;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .section {
+            height: 50%;
+            padding: 16px;
+            border: 2px solid red;
+            border-radius: 12px;
+            width: 40%;
+            text-align: center;
+        }
+
+        #left {
+            box-shadow: 10px 10px 40px red inset, -10px -10px 40px orange inset ;
+        }
+
+        #right {
+            box-shadow: 10px 10px 40px green inset, -10px -10px 40px greenyellow inset ;
+        }
+
+        input {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="section" id="left">
+            <h2>Addition</h2>
+            <input type="number" name="num1" id="num1">
+            <span>+</span>
+            <input type="number" name="num2" id="num2">
+            <span>=</span>
+            <span id="addition">0</span>
+        </div>
+
+        <div class="section" id="right">
+            <h2>Multiplication</h2>
+            <input type="number" name="num3" id="num3">
+            <span>X</span>
+            <input type="number" name="num4" id="num4">
+            <span>=</span>
+            <span id="multiplication">0</span>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', ()=>{
+            let num1 = document.getElementById('num1');
+            num1.value = 0;
+            let num2 = document.getElementById('num2');
+            num2.value = 0;
+            let addition = document.getElementById('addition');
+
+            let num3 = document.getElementById('num3');
+            num3.value = 0;
+            let num4 = document.getElementById('num4');
+            num4.value = 0;
+            let multiplication = document.getElementById('multiplication');
+            
+            const addFun = () =>{
+                addition.innerHTML = parseInt(num1.value) + parseInt(num2.value)
+            }
+
+            const multiplyFun = () =>{
+                multiplication.innerHTML = parseInt(num3.value) * parseInt(num4.value)
+            }
+
+            num1.addEventListener('change', addFun);
+            num2.addEventListener('change', addFun);
+
+            num3.addEventListener('change', multiplyFun);
+            num4.addEventListener('change', multiplyFun);
+        })
+    </script>
+</body>
+</html>
