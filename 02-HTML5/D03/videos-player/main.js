@@ -1,12 +1,19 @@
 window.addEventListener('load', function () {
 
+            urls = ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            ]
+
             myvideo = this.document.getElementById('myvideo');
             myvideo.width = myvideo.height = 700;
             videos = this.document.getElementsByClassName('videotitle');
 
             for (let i = 0; i < videos.length; i++) {
                 videos[i].addEventListener('click', (e)=>{
-                    myvideo.src = 'universe.mp4';
+                    let vidId = Math.floor(Math.random()*4)
+                    myvideo.src = urls[vidId];
                     playpausefun()
                 })
                 
