@@ -3,7 +3,16 @@ body {
   background: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.caution {
+    background-color: rgb(255, 238, 0);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
 }
 
 main {

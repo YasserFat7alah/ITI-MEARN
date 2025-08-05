@@ -59,6 +59,16 @@ const tasksData = [
         ],
       },
     ],
+  },
+  {subject: "Advanced JavaScript",
+    days: [
+      {
+        day: "Day 01",
+        tasks: [
+          { name: "Data Table", url: "/03-AdvancedJS/D01/Data-Table/index.html" },
+        ],
+      }
+    ],
   }
 ];
 
