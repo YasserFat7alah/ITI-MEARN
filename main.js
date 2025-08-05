@@ -65,7 +65,7 @@ const tasksData = [
       {
         day: "Day 01",
         tasks: [
-          { name: "Data Table", url: "/03-AdvancedJS/D01/Data-Table/index.html" },
+          { name: "Data Table", url: "03-AdvancedJS/D01/Data-Table/index.html" },
         ],
       }
     ],
