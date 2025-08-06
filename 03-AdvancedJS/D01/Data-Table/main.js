@@ -1,9 +1,14 @@
 window.addEventListener('load', async () => {
 
-    let url = 'https://jsonplaceholder.typicode.com/users';
-    await getData(url);
+    if(!localStorage.getItem('data')) {
+        let url = 'https://jsonplaceholder.typicode.com/users';
+        console.log('getting data .... ')
+        await getData(url);
+    }
 
     let data = eval(localStorage.getItem('data'));
+
+    
 
     for (let i = 0; i < data.length; i++) {
         data[i] = new Person(data[i].id, data[i].name, data[i].username, data[i].email, data[i].address);
@@ -38,11 +43,10 @@ function Person(_id, _name, _username, _email,_address) {
 
 
 
-
+/* Creating a row */
 function addUser(_userObj) {
     let row = document.createElement('tr');
     for (const key in _userObj) {
-        console.log(_userObj[key].constructor.name)
         if(_userObj[key].constructor.name == 'Object'){
             
             row.appendChild(createTable(...[_userObj[key]]));
@@ -57,8 +61,9 @@ function addUser(_userObj) {
     return row;
 }
 
-
+/* Creating a full table */
 function createTable(...arr) {
+
     let table = document.createElement('table');
     let header = document.createElement('thead');
     let titles =document.createElement('tr');
