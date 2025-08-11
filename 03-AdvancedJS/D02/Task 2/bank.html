@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+</head>
+<body>
+    <img src="tasktwo.png" width="1000" alt="">
+    <script>
+        /* Base Class */
+        function Account(_balance) {
+            this.Balance = _balance;
+        }
+
+        Account.prototype.credit = function (_amount) { // Add cash to balance
+            this.Balance += _amount;
+        };
+
+        Account.prototype.debit = function (_amount) { // Withdraw from balance
+        if (_amount <= this.Balance) {
+            this.Balance -= _amount;
+        } else {
+            console.log("Debit amount exceeded account balance.");
+        }
+        };
+
+        Account.prototype.getBalance = function () { // display current balance
+            return this.Balance;
+        };
+
+        /* Saving Account Class */
+        function SavingsAccount(_balance, _interestRate) {
+            Account.call(this, _balance); 
+            this.interestRate = _interestRate;
+        }
+
+        
+        SavingsAccount.prototype = Object.create(Account.prototype); // Inherit prototype from Account
+        SavingsAccount.prototype.constructor = SavingsAccount;
+
+        
+        SavingsAccount.prototype.calculateInterest = function () { // calculate interest
+        return this.Balance * this.interestRate;
+        };
+
+
+        /* Checking Account */
+        function CheckingAccount(balance, _fee) {
+            Account.call(this, balance); // call parent constructor
+            this.Fee = _fee;
+        }
+
+        
+        CheckingAccount.prototype = Object.create(Account.prototype); // Inherit prototype from Account
+        CheckingAccount.prototype.constructor = CheckingAccount;
+
+        
+        CheckingAccount.prototype.credit = function (amount) { // Override credit
+        this.Balance += (amount-this.Fee);
+        };
+
+        
+        CheckingAccount.prototype.debit = function (amount) { // Override debit
+        if ((amount + this.Fee) <= this.Balance) {
+            this.Balance -= (amount + this.Fee);
+        } else {
+            console.log("Debit amount exceeded account balance.");
+        }
+        };
+
+
+        const acc = new Account(100);
+        acc.credit(50); //add 50
+        console.log(acc.getBalance());  //show: 150
+        acc.debit(200);  // take 200 (refused)
+        console.log(acc.getBalance()); //show: 150
+        acc.debit(100);  // take 100 (accepted)
+        console.log(acc.getBalance()); //show: 50
+
+        const saving = new SavingsAccount(1000, 0.1);
+        console.log(saving.calculateInterest()); // interest: 100
+
+        const checking = new CheckingAccount(500, 5);
+        checking.credit(100); // adds 100 - 5 = 95
+        console.log(checking.getBalance()); // 595
+        checking.debit(200); // subtracts 200 + 5
+        console.log(checking.getBalance()); // 390
+    </script>
+</body>
+</html>

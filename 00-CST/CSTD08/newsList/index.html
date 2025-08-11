@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task01 - News</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(189, 189, 189);
+        }
+
+        .wrapper {
+            width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .type {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .type label {
+            margin-right: 20px;
+            font-size: 20px;
+        }
+
+        .type span {
+            margin-right: 10px;
+        }
+
+        .addArea {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        input[type=text] {
+            width: 300px;
+            margin: 8px 50px 8px 0;
+            height: 20px;
+            padding: 2px 15px;
+        }
+
+        input[type=button] {
+            width: 100px;
+            height: 20px;
+        }
+
+        .searcharea {
+            font-weight: bold;
+        } 
+
+        table {
+            width: 1200px;
+            background-color: #e2e1e1;
+        }
+
+        tr :nth-child(1) {
+            width: 80px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+
+        td {
+            width: 1100px;
+            padding: 3px 15px;
+        }
+
+
+        .sport :nth-child(1) {
+            background-color: lightgreen;
+        }
+
+        .social :nth-child(1) {
+            background-color: lightblue;
+        }
+
+        .politics :nth-child(1) {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .sport {
+            background-color: rgb(212, 243, 212);
+        }
+
+        .social {
+            background-color: rgb(217, 233, 238);
+        }
+
+        .politics {
+            background-color: rgb(241, 241, 227);
+        }
+
+
+        .err {
+            color: red;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="type">
+            <label for="ntype">News Type:</label>
+            <input type="radio" name="ntype" id="sport" value="Sport">
+            <span>Sport</span>
+            <input type="radio" name="ntype" id="social" value="Social">
+            <span>Social</span>
+            <input type="radio" name="ntype" id="politic" value="Politics">
+            <span>Politics</span>
+        </div>
+
+        <div class="addArea">
+            <input type="text" name="addnews" id="addnews" placeholder="Add here">
+            <input type="button" value="Add"  onclick="addNews()">
+            <div class="err" id="err"> </div>
+        </div>
+        <hr>
+
+        <div class="searcharea">
+            <label for="searchnews">Search : </label>
+            <input type="text" name="searchnews" id="searchNews" onkeyup="searchNews()">
+        </div>
+        <hr>
+
+        <div class="listarea">
+            <table></table>
+        </div>
+    </div>
+    
+    <script>
+        function addNews () {
+            err.innerHTML = '';
+            var table = document.getElementsByTagName('table')[0];
+            var titleI = document.getElementById('addnews');
+            var title = titleI.value.trim();
+
+            if(!title) err.innerHTML = 'title cannot be empty';
+
+            var newtypes = document.querySelectorAll("input[type=radio]");
+            var newtype = '';
+            
+            for (let i = 0; i < newtypes.length; i++) {
+                if (newtypes[i].checked) {
+                    newtype = newtypes[i].value;
+                }
+            }
+            
+            var tr = document.createElement('tr');
+
+            var ntitle = document.createElement('td');
+            ntitle.innerHTML = title;
+
+
+            var ntype = document.createElement('td');
+            ntype.innerHTML = newtype;
+
+            tr.appendChild(ntype);
+            tr.appendChild(ntitle);
+
+            switch (newtype) {
+                case 'Sport':
+                    tr.setAttribute('class', 'sport')
+                    break;
+            
+                case 'Politics':
+                    tr.setAttribute('class', 'politics')
+                    break;
+
+                case 'Social':
+                    tr.setAttribute('class', 'social')
+                    break;
+
+                default:
+                    err.innerHTML = 'News Type Must be specified'
+                    break;
+            }
+            
+
+            var newspaper = document.getElementsByTagName('tr') || [];
+            var duplicate = false;
+            if (newspaper.length) {
+                for (let i = 0; i < newspaper.length; i++) {
+                    if (newspaper[i].innerHTML.split(' ').join('') === tr.innerHTML.split(' ').join('')) {
+                        err.innerHTML = 'This news already exists'
+                        duplicate = true;
+                        break;
+                    }
+                
+                }
+            }
+            
+
+            if (!err.innerHTML) {
+                table.appendChild(tr);
+                titleI.value = '';
+                err.innerHTML = '';
+            }
+        }
+
+        function searchNews() {
+            var text = document.getElementById('searchNews').value;
+
+            var news = document.querySelectorAll("tr");
+
+            for (let i = 0; i < news.length; i++) {
+                if(news[i].innerText.toLowerCase().indexOf(text.toLowerCase()) < 0 ) {
+                    if (!news[i].classList.contains('hidden')) news[i].classList.add('hidden');
+                } else {
+                    if (news[i].classList.contains('hidden')) news[i].classList.remove('hidden');
+                }
+            }
+          }
+    </script>
+</body>
+</html>

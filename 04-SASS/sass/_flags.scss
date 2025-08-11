@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:math";
+
+// ===== Flags map =====
+$flags: (
+  egypt: (#ce1126, #ffffff, #000000),
+  syria: (#007a3d, #ffffff, #000000),
+  lebanon: (#ed1c24, #ffffff, #ed1c24)
+);
+
+// ===== Gradient mixin =====
+@mixin three-color-gradient($colors) {
+  background: linear-gradient(
+    to bottom,
+    list.nth($colors, 1) 0%,
+    list.nth($colors, 1) 33.333%,
+    list.nth($colors, 2) 33.333%,
+    list.nth($colors, 2) 66.666%,
+    list.nth($colors, 3) 66.666%,
+    list.nth($colors, 3) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+// ===== Get random flag key =====
+@function get-random-flag($flags) {
+    $flag-keys: map.keys($flags);
+    $random-index: math.random(list.length($flag-keys));
+    $random-flag: list.nth($flag-keys, $random-index);
+    @return map.get($flags, $random-flag);
+}
+
+
+.flag{
+    min-height: 100vh;
+    @include three-color-gradient(get-random-flag($flags));
+}

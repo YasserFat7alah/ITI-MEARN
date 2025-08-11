@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+</head>
+<body>
+    <script>
+        /* 
+        3- Create constant project anonymouse object after takeing properties names and values  from user  (using object literals ) 
+                    Note: names are projectId , projectName ,duration and printData which 
+                    console.log all project data         
+        */
+
+        /* input initialization */
+        /* let projectId = '';
+        let projectName = '';
+        let duration = ''; */
+
+        /* Recieve projectId */
+        /* do {
+            projectId = prompt('Enter projectId');
+        } while (!projectId); */
+
+        /* Recieve projectName */
+        /* do {
+            projectName = prompt('Enter projectName');
+        } while (!projectName); */
+
+        /* Recieve duration */
+        /* do {
+            duration = prompt('Enter duration');
+        } while (!duration); */
+
+
+        /* const project = {
+            projectId,
+            projectName,
+            duration,
+            printData() {
+                console.log(`
+                project id: ${this.projectId}
+                project name: ${this.projectName}
+                project duration: ${this.duration}
+                `);
+            },
+        } */
+
+        let running = true;
+        let propName = '';
+        let propVal = '';
+
+        const project = {
+            printData() {
+                let data = ''
+                for (const prop in project) {
+                    if(!(prop == 'printData')) 
+                    data +=  `${prop}: ${project[prop]} \n`;
+                    }
+                console.log(data);
+                },
+            };
+
+        do {
+
+            /* take properity name */
+            do {
+                propName = prompt('Enter prop name (prefered camelCase)');
+            } while (!propName);
+
+            /* take properity value */
+            do {
+                propVal = prompt('Enter prop value');
+            } while (!propVal);
+
+            /* Add properity to the object */
+            project[propName] = propVal;
+
+            /* Ask for more props */
+            running = confirm('wanna add more properities?');
+            
+        } while (running);
+
+        project.printData();
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+</head>
+<body>
+    <script>
+        function Person(_Id, _Name) {  
+            this.Id = _Id;
+            this.Name = _Name;
+        }
+
+        function Employee(_salary) {
+            this.Salary = _salary;
+        }
+
+        function HREmployee(_location) {
+            this.Location = _location;
+        }
+
+                let person = new Person(1, "Empty");
+
+        Employee.prototype = person;
+
+        let employee = new Employee();
+
+        HREmployee.prototype = employee;
+
+        let hremployee = new HREmployee();
+
+
+        
+
+
+        // Test prototype chain in console for HREmployee and Employee objects : noticed that hremployee.prototype is Person Object?
+        /* console.log("=============================");
+        console.log('Employee.prototype');
+        console.log(Employee.prototype);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('Employee.prototype.__proto__');
+        console.log(Employee.prototype.__proto__);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('employee instanceof Employee');
+        console.log(employee instanceof Employee);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('employee instanceof Person');
+        console.log(employee instanceof Person);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('employee instanceof Object');
+        console.log(employee instanceof Object);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('employee.constructor.name');
+        console.log(employee.constructor.name);
+        console.log("=============================");
+        console.log("                               ");
+
+
+        console.log("=============================");
+        console.log('HREmployee.prototype');
+        console.log(HREmployee.prototype);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('HREmployee __proto__ => __proto__');
+        console.log((hremployee.__proto__).__proto__);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('hremployee instanceof HREmployee');
+        console.log(hremployee instanceof HREmployee);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('hremployee instanceof Employee');
+        console.log(hremployee instanceof Employee);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('hremployee instanceof Person');
+        console.log(hremployee instanceof Person);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('hremployee instanceof Object');
+        console.log(hremployee instanceof Object);
+        console.log("=============================");
+        console.log("                               ");
+
+        console.log("=============================");
+        console.log('employee.constructor.name');
+        console.log(employee.constructor.name);
+        console.log("=============================");
+        console.log("                               "); */
+
+        // try to access person id and name from HREmployee object : accessable
+        /* console.log(hremployee.Id);
+        console.log(hremployee.Name); */
+
+
+        // Define Name And ID Properties with values  For HREmployee Object then test if it accessible with person object  :not accessible
+        /* hremployee.Id = 3;
+        hremployee.Name = 'Yasser';
+        console.log(person); */
+
+        // Define Age Property with Person Object and test if it accessible with HREmployee Object : accessible
+        /* person.age = 25;
+        console.log(hremployee.age); */
+
+
+    </script>
+</body>
+</html>

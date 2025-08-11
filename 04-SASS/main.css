@@ -1,0 +1,81 @@
+.flag {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ce1126 0%, #ce1126 33.333%, #ffffff 33.333%, #ffffff 66.666%, #000000 66.666%, #000000 100%);
+  background-repeat: no-repeat;
+}
+
+.base-box, .extended-box {
+  background-color: #f3f4f6;
+  margin: 0.5rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extended-box {
+  color: red;
+  background-color: lightgreen;
+  padding: 20px;
+  justify-content: end;
+}
+
+/* for loop to generate 10 classes */
+.fs-1 {
+  font-size: 0.5rem;
+}
+
+.fs-2 {
+  font-size: 1rem;
+}
+
+.fs-3 {
+  font-size: 1.5rem;
+}
+
+.fs-4 {
+  font-size: 2rem;
+}
+
+.fs-5 {
+  font-size: 2.5rem;
+}
+
+.fs-6 {
+  font-size: 3rem;
+}
+
+.fs-7 {
+  font-size: 3.5rem;
+}
+
+.fs-8 {
+  font-size: 4rem;
+}
+
+.fs-9 {
+  font-size: 4.5rem;
+}
+
+.fs-10 {
+  font-size: 5rem;
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  body {
+    font-size: 12px;
+    background-color: #2563eb;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+    background-color: #f3f4f6;
+  }
+}
+@media screen and (min-width: 1025px) {
+  body {
+    font-size: 16px;
+    background-color: yellow;
+  }
+}/*# sourceMappingURL=main.css.map */

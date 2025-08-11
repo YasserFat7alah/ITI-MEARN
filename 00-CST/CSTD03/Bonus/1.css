@@ -1,0 +1,164 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-image: url(bg.png);
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px 0;
+}
+.wrapper  {
+    width: 920px;
+    height: 909px;
+    border: 4px grey solid;
+    margin: 0 auto;
+    position: relative;
+}
+
+#topimg {
+    width: 100%;
+}
+
+.top {
+    width: 700px;
+    height: 100px;;
+}
+#hbg{
+    width: 700px;
+    height: 100px ;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#icon {
+    height: 90px;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+}
+
+#t95 {
+    font-size: 70px;
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 110px;
+    font-weight: bolder; 
+}
+
+#review {
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top: 76px;
+    left: 260px;
+}
+
+.aside {
+    width: 150px;
+    position: absolute;
+    top: 0;
+    right: 81px;
+}
+
+.astitle  {
+    position: relative;
+    background-color: #000;
+    width: 231px;
+    height: 50px;
+    color: white;
+}
+
+.astitle>h3 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+dl {
+    background-color: #a2b964;
+    width: 231px;
+    position: relative;
+    top: -5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 10px;
+}
+dl dt {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px 0 3px 10px;
+}
+
+dl dd {
+    font-size: 10px;
+    padding: 0 20px 0 40px;
+}
+
+.body {
+    position: relative;
+    width: 688px;
+    text-align: center;
+    margin-top: 10px;
+
+}
+.col1  {
+    position: absolute;
+    display: inline-block;
+    width: 325px ;
+
+    padding: 6px;
+}
+.post   {
+    width: 100%;
+
+}
+.content {  
+    background-color: #e1d697;
+    border: 1px solid grey;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.content >img {
+    float: left;
+}
+
+.metadata {  
+    text-align: left;
+    padding: 10px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #313131;
+    margin-bottom: 22px;
+}
+.metadata >img {
+    width: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ul {
+    font-style: italic;
+}
+
+.footer {
+    background-color: #a2b964;
+    width: 920px;
+    position: absolute;
+    top: 896px;
+    text-align: center;
+    font-size: 12px;
+}
+
+img[usemap="#w3"] {
+    position:absolute;
+    width:80px ;
+    top: 850px;
+    right:-84px ;
+}

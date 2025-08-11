@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sheet</title>
+    
+</head>
+<body>
+    <input type="button" value="show data in JSON" id="local">
+    <input type="button" value="show data in xml" id="xml">
+    <input type="button" value="show data in RestAPI" id="online">
+    <script>
+
+    
+    function Person(id, name, city, salary, personalImage) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.salary = salary;
+        this.personalImage = personalImage;
+    }
+
+    function toPerson(...arr) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[0] = new Person(arr[0].id, arr[0].name ,arr[0].city, arr[0].salary, arr[0].personalImage) 
+        }
+
+        return arr;
+    }
+
+    let people = [];
+
+    document.getElementById('local').addEventListener('click', function () {
+        /* Send Request */
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "people.json", true);
+        xhr.send('');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                people = JSON.parse(xhr.responseText);
+                people = toPerson(...people); 
+                localStorage.setItem("people", JSON.stringify(people));
+
+                window.open('local.html')
+            }
+        }
+    })
+
+    let books = [];
+
+    document.getElementById('xml').addEventListener('click', function () {
+        /* Send Request */
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "bookstore.xml", true);
+        xhr.send('');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let root = xhr.responseXML.children[0];
+                let children = root.children;
+                    for (let i = 0; i < children.length; i++) {
+                        let child = {};
+                        for (let x = 0; x < children[i].children.length; x++) {
+                            child[children[i].children[x].tagName] = children[i].children[x].textContent;
+                        }
+                        books.push(child);
+                    }
+                
+                localStorage.setItem("books", JSON.stringify(books));
+                console.log(books)
+                window.open('xml.html')
+            }
+        }
+    })
+
+    let peopleapi = [];
+
+    document.getElementById('online').addEventListener('click', function () {
+        /* Send Request */
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+        xhr.send('');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                peopleapi = JSON.parse(xhr.responseText);
+                peopleapi = toPerson(...peopleapi); 
+                localStorage.setItem("peopleapi", JSON.stringify(peopleapi));
+
+                window.open('api.html')
+            }
+        }
+    })
+
+
+    </script>
+</body>
+</html>

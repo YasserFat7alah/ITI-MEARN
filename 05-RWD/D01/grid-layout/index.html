@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper{
+            width: 400px;
+            height: 400px;
+            display: grid;
+            gap: 8px;
+            border: 1px solid black;
+            grid-template-areas:
+            "one two two"
+            "three three four"
+            "five six four"
+            ;
+        }
+
+        .cell {
+            background-color: blue
+        }
+
+        .row {
+            background-color: red
+        }
+
+        .col {
+            background-color: green;
+        }
+
+        .one{
+            grid-area: one;
+        }
+
+        .two{
+            grid-area: two;
+        }
+        .three{
+            grid-area: three;
+        }
+        .four{
+            grid-area: four;
+        }
+        .five{
+            grid-area: five;
+        }
+        .six{
+            grid-area: six;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item cell one"></div>
+        <div class="item row two"></div>
+        <div class="item row three"></div>
+        <div class="item col four"></div>
+        <div class="item cell five"></div>
+        <div class="item cell six"></div>
+    </div>
+</body>
+</html>

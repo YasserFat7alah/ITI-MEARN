@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+</head>
+<body>
+    <script>
+        /* 
+        * Ask user to enter his name
+        * Make sure name is string
+        * ask user to enter phone number
+        * make sure of
+        *          - format xxx-xxxxxxxx
+        *          - length 11
+        *          - first 3 numbers (010 , 011 , 012 , 015)
+        */
+
+        /* TAKE USER'S NAME */
+        var codes = ['010','011','012','015'];
+
+        do {
+            var uname = prompt("Enter your name..");
+        } while (uname == null || uname.trim() == '' || uname.length < 3 || +uname );
+
+        do {
+            var pnum = prompt("Enter your phone number in this format .. (xxx-xxxxxxxx)");
+            var pcode = pnum.slice(0, 3);
+            var digits = pnum.slice(4);
+
+        } while (pnum == null || pnum.trim() == '' || isNaN(digits) || pnum.indexOf('-') != 3 || !(codes.some(function (_val) { return _val == pcode; })) || digits.length != 8);
+
+        document.writeln("<h1> Name: " + uname + "</h1>")
+        document.writeln("<h1> Number: " + pnum + "</h1>")
+    </script>
+</body>
+</html>

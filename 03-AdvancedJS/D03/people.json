@@ -1,0 +1,28 @@
+[
+  {
+    "id":1,
+    "name":"Yasser",
+    "city":"Mansoura",
+    "salary":5000,
+    "personalImage":"1.jpg"
+  },
+  {
+    "id":2,
+    "name":"Ahmed",
+    "city":"Cairo",
+    "salary":2500,
+    "personalImage":"2.jpg"
+  },{
+    "id":3,
+    "name":"Ali",
+    "city":"Talkha",
+    "salary":4000,
+    "personalImage":"3.jpg"
+  },{
+    "id":1,
+    "name":"Saieed",
+    "city":"Tanta",
+    "salary":1200,
+    "personalImage":"4.jpg"
+  }
+]

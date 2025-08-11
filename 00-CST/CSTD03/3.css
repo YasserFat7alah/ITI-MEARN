@@ -1,0 +1,128 @@
+body {
+    background: lightgrey;
+}
+
+.wrapper {
+    background-color: #fff;
+    width: 400px;
+    border: 1px solid black;
+    padding: 30px;
+    margin: auto;
+}
+
+.fbx {
+    width: 400px;
+    text-align: center;
+}
+
+.fbx>button {
+    padding: 5px;;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+    color: white;
+}
+
+button>img  {
+    padding-right: 20px;
+    height: 16px;
+    color: white;
+}
+#fb{
+    width: 210px;
+    background-color: #3a5898;
+    margin-right: 3px;
+}
+
+#x{
+    width: 180px;
+    background-color: #03aef0;
+}
+
+.or {
+    width: 400px;
+    height: 70px;
+    text-align: center;
+}
+.or>div {
+    position: relative;
+    top: 20px;
+    left:185px;
+    background-color: #cfcdcd;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.or>div>span {
+    position: relative;
+    top:2px;
+}
+
+input {
+    display: block;
+    width: 376px;
+    height: 30px;
+    border:2px solid #8b8b8b;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.forgotpw {
+    position: relative;
+    width: 400px;
+    height: 40px;
+}
+input[type=checkbox] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 16px;
+}
+
+.forgotpw>span {
+    left: 25px;
+    top: 10px;
+    position: absolute;
+    display: inline-block;
+    color: #8b8b8b;
+}
+
+.forgotpw>a {
+    position: absolute;
+    display: inline-block;
+    right:0 ;
+    top: 10px;
+    text-decoration: none;
+    color: #8b8b8b;
+}
+
+.login {
+    display: block;
+    height: 40px;
+    width: 400px;
+    border: 0;
+    background-color: #3a5898;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.signup {
+    width: 400px;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #8b8b8b;
+}
+
+.signup>a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #03aef0;
+}
+

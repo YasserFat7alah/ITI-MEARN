@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        img {
+            width: 80px;
+        }
+        .asc-dsc button {
+            border: none;
+            outline: none;
+        }
+        .asc-dsc button:hover {
+            background-color: rgb(206, 206, 206);
+            cursor: pointer;
+        }
+
+        .expensive {
+            background-color: rgb(255, 143, 143);
+        }
+
+        .regular {
+            background-color: rgb(169, 255, 143);
+        }
+    </style>
+</head>
+<body>
+    
+    <table id="table" border="1">
+        
+    </table>
+    
+    <script>
+        window.onload = () => {
+        const data = localStorage.getItem("books");
+        if (data) {
+        books = JSON.parse(data);
+        displayBooks(books);
+        }
+};
+
+function displayBooks(arr) {
+    let table = document.getElementById("table");
+    table.innerHTML = `
+        <tr>
+            <th>
+                <span>Title</span>
+                 
+                <div class= "asc-dsc">
+                    <button onclick="sortFun('title','asc')">↑</button>
+                    <button onclick="sortFun('title','desc')">↓</button>
+                </div>
+                
+            </th>
+            <th>
+                <span>Publisher</span>
+                
+                <div class= "asc-dsc">
+                    <button onclick="sortFun('publisher','asc')">↑</button>
+                    <button onclick="sortFun('publisher','desc')">↓</button>
+                </div>
+            </th>
+            <th>
+                <span>isbn</span>
+                
+                <div class= "asc-dsc">
+                    <button onclick="sortFun('isbn','asc')">↑</button>
+                    <button onclick="sortFun('isbn','desc')">↓</button>
+                </div>
+            </th>
+            <th>
+                <span>Price</span>
+                
+                <div class= "asc-dsc">
+                    <button onclick="sortFun('price','asc')">↑</button>
+                    <button onclick="sortFun('price','desc')">↓</button>
+                </div>
+            </th>
+            <th>
+                <span>Actions</span>
+                
+            </th>
+        </tr>
+    `;
+
+    arr.forEach((book, index) => {
+        table.innerHTML += `
+        <tr class="${book.price> 100? 'expensive': 'regular'}">
+            <td>${book.title}</td>
+            <td contenteditable="true">${book.publisher}</td>
+            <td contenteditable="true">${book.isbn}</td>
+            <td contenteditable="true">${book.price}</td>
+            <td>
+            <button onclick="updateBook(${index})">Update</button>
+            <button onclick="deleteBook(${index})">Delete</button>
+            </td>
+        </tr>
+        `;
+    });
+
+    saveToLocalStorage(arr);
+}
+
+function saveToLocalStorage(arr) {
+    localStorage.setItem("books", JSON.stringify(arr));
+}
+
+        function updateBook(index) {
+        const row = document.getElementById("table").rows[index + 1];
+        books[index].publisher = row.cells[1].innerText;
+        books[index].isbn = row.cells[2].innerText;
+        books[index].price = parseFloat(row.cells[3].innerText);
+        displayBooks(books);
+        }
+
+        function deleteBook(index) {
+            if(confirm("do you really want to delete this record?")){
+                books.splice(index, 1);
+                displayBooks(books);
+            }
+        }
+
+        
+
+
+        function sortFun(col, order) {
+            if(books[0][col].constructor.name == "Number"){
+                sorted = books.slice().sort((a, b) => order === 'asc' ? a[col] - b[col] : b[col] - a[col]);
+            }else{
+                sorted = books.slice().sort((a, b) => order === 'asc' ? a[col].localeCompare(b[col], 'en', { sensitivity: 'base' }) : b[col].localeCompare(a[col], 'en', { sensitivity: 'base' }));
+            }
+            
+            console.log(sorted)
+            displayBooks(sorted);
+}
+
+    </script>
+</body>
+</html>

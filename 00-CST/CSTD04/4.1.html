@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 4.1</title>
+</head>
+<body>
+    <script>
+        /* VALIDATE NUMBER WITH RADIX */
+        do {
+            /* VALIDATE THE INPUT NUMBER */
+            do {
+                var temp = prompt("enter a number to convert.. (in digits EX.'10')");
+            } while ((temp != '0' && +temp == 0) || isNaN(parseInt(temp, 36)));
+            /* VALIDATE THE INITIAL RADIX */
+            do {
+                var iRadix = +prompt("enter the initial radix");
+            } while (isNaN(iRadix) || !(iRadix > 1 && iRadix < 37));
+
+            var iNum = parseInt(temp, iRadix); // CONVERT TO NUMBER
+        } while (isNaN(iNum) || iNum.toString(iRadix) != temp );
+
+        /* VALIDATE THE TARGET RADIX */
+        do {
+                var tRadix = +prompt("enter the Target radix");
+            } while (isNaN(tRadix) || !(tRadix > 1 && tRadix < 37));
+        
+        var tNum = (iNum).toString(tRadix); // CONVERT NUMBER WITH THE TARGET RADIX
+
+        document.writeln ('<p> Your inputs are :' + temp + ', ' + iRadix +', '+ tRadix + '</p>')
+        document.writeln ('<p> Number: '+ temp + " (Radix: " + iRadix + " ) => Target Number : "+ tNum + " (Radix: " + tRadix + " ) </p>")
+    </script>
+</body>
+</html>

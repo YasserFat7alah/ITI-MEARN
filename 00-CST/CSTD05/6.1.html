@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 6.1</title>
+</head>
+<body>
+    <script>
+        /* 
+        * 6.1 - write js code to convert a string into Pascal Case :
+	    *    ex:
+		*    input: "ali mohamed"
+		*    output: "Ali Mohamed"
+        *  */
+
+        do {
+            var hasNum = false;
+            var text = prompt("Enter text..");
+            var words = text.split(" ");
+            
+        } while (text == null || text.trim() == '' || text.length < 3 || !isNaN(parseInt(text)) || words.some(function(_val) { return !isNaN(parseInt(_val))} ) || words.some(function(_val) { return isNaN(parseInt(_val.toLowerCase() , 36))} ));
+
+        for (let i = 0; i < words.length; i++) {
+            words[i]= (words[i].replace(words[i].substr(0,1), words[i].substr(0,1).toUpperCase())) + " ";
+        }
+
+
+        var output = words.reduce(function(total, val) { return total += val;}).trim();
+        alert(output);
+        console.log(output);
+    </script>
+    
+</body>
+</html>

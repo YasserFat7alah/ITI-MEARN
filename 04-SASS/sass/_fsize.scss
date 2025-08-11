@@ -1,0 +1,9 @@
+@use "./variables" as * ;
+
+/* for loop to generate 10 classes */
+@for $i from 1 through 10 {
+  .fs-#{$i} {
+    font-size: $i * $small-font-size;
+  }
+}
+

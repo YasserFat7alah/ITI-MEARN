@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 06 - welcome</title>
+</head>
+<body>
+    <script>
+        
+        var age = '';
+        var uname = '';
+        var gndr = '';
+        var clr = '';
+
+
+        var cookies = document.cookie.split(';');
+        console.log(cookies);
+
+        for (let i = 0; i < cookies.length; i++) {
+            console.log(cookies[i])
+            var temp = cookies[i].split("=");
+            cookies[i] = temp;
+            
+            switch (cookies[i][0].trim()) {
+                case "gndr":
+                    gndr = cookies[i][1].trim();
+                    break;
+                
+                case "uname":
+                    uname = cookies[i][1].trim();
+                    break;
+                
+                case "clr":
+                    clr = cookies[i][1].trim();
+                    break;
+
+                case "age":
+                    age = cookies[i][1].trim();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        console.log(cookies);
+        
+
+        if(gndr == 'male') {
+            document.writeln('<img src="m.png" />');
+        }else {
+            document.writeln('<img src="f.png" />');
+        }
+
+        
+        document.writeln('<span style = " font-weight: bold;"> Welcome <span style="color: ' + clr + ';"> ' +uname + '</span></span>');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks 2 - 3 - 4</title>
+</head>
+<body>
+    <script>
+
+    /* 
+        Generate a random number between 0-9
+    */
+        var num = Math.floor(Math.random()*10);
+
+        document.writeln("<h2>Task 02</h2>");
+        document.writeln("<br /><br /><h3> Random Number : " + num + "</h3> <hr />");
+
+
+
+    /* 
+        show today's date and show the Day name on screen
+    */
+
+        var today = new Date();
+
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        document.writeln("<h2>Task 03</h2>")
+        document.writeln("<br /><br /><h3> Today's Date : " + weekday[today.getDay()] + " - " + today.toLocaleDateString() + "</h3> <hr />");
+
+
+    /* 
+    Delcare an array object of names : 
+    var arr=[“ahmed”,”ali”,”moustafa”,”ibraheem”,”alaa”,”hamada”];
+    generate two diff random names : then display within document */
+
+    var arr = ['ahmed', 'ali', 'moustapha', 'ibrahim', 'alaa', 'hamada'];
+
+    document.writeln("<h2>Bottle Game</h2>")
+
+    var name1 = arr[Math.floor(Math.random()*6)];
+
+     document.writeln("<br /><br /><h3> First Name : " + name1 + "</h3>");
+
+    do {
+        var name2 = arr[Math.floor(Math.random()*6)];
+        
+    } while (name1 == name2);
+    document.writeln("<h3> Second Name : " + name2 + "</h3> <hr />");
+
+    
+    </script> 
+</body>
+</html>

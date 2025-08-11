@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        let url = 'https://jsonplaceholder.typicode.com/users/'
+        async function fetchName(_url) {
+            let response = await fetch(_url)
+            .then(res => {
+                return res.json();
+            });
+
+            response.forEach(element => {
+                let names = document.getElementById('names');
+                let data = document.getElementById('data');
+                let span = document.createElement('span');
+                span.innerHTML = element.name;
+                
+
+                span.addEventListener('click', (e) => {
+                    data.innerHTML= ''
+                    for (let key in element) {
+                        let item = document.createElement('li')
+                        item.innerHTML = `${key} : ${element[key]}`
+                        data.appendChild(item);
+                    }
+                })
+
+                names.appendChild(span);
+            });
+        }
+
+        fetchName(url);
+    </script>
+</head>
+<body>
+    <div class="container" id="names">
+        
+    </div>
+    <div id="data">
+
+    </div>
+</body>
+</html>

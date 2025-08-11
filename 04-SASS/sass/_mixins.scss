@@ -1,0 +1,28 @@
+// Phones Media Query
+@mixin isPhone {
+  @media screen and (min-width: 321px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Laptops Media Query
+@mixin isLaptop {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Desktops Media Query
+@mixin isDesktop {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+
+// Dynamic Media Query
+// @mixin deviceScreen($min, $max) {
+//   @media screen and (min-width: $min) and (max-width: $max) {
+//     @content;
+//   }
+// }

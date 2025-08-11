@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        img {
+            width: 80px;
+        }
+        .asc-dsc button {
+            border: none;
+            outline: none;
+        }
+        .asc-dsc button:hover {
+            background-color: rgb(206, 206, 206);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <table id="table" border="1">
+        
+    </table>
+    
+    <script >
+        window.onload = () => {
+        const data = localStorage.getItem("peopleapi");
+        if (data) {
+        people = JSON.parse(data);
+        displayPeople(people);
+        }
+};
+
+function displayPeople(arr) {
+    let table = document.getElementById("table");
+    table.innerHTML = `
+        <tr>
+            <th>
+                <span>ID</span>
+            </th>
+            <th>
+                <span>Name</span>
+            </th>
+            <th>
+                <span>Username</span>
+            </th>
+            <th>
+                <span>Email</span>
+            </th>
+        </tr>
+    `;
+
+    arr.forEach((person, index) => {
+        table.innerHTML += `
+        <tr>
+            <td>${person.id}</td>
+            <td contenteditable="true">${(person.name)? person.name: " "}</td>
+            <td contenteditable="true">${(person.username)? person.username: " "}</td>
+            <td contenteditable="true">${(person.email)? person.email: " "}</td>
+            <td>
+            <button onclick="updatePerson(${index})">Update</button>
+            <button onclick="deletePerson(${index})">Delete</button>
+            </td>
+        </tr>
+        `;
+    });
+
+    saveToLocalStorage(arr);
+}
+
+    function saveToLocalStorage(arr) {
+        localStorage.setItem("people", JSON.stringify(arr));
+    }
+
+    function updatePerson(index) {
+    const row = document.getElementById("table").rows[index + 1];
+    people[index].name = row.cells[1].innerText;
+    people[index].username = row.cells[2].innerText;
+    people[index].email = parseFloat(row.cells[3].innerText);
+    displayPeople(people);
+    }
+
+    function deletePerson(index) {
+        if(confirm("do you really want to delete this record?")){
+            people.splice(index, 1);
+            displayPeople(people);
+        }
+    }
+    </script>
+</body>
+</html>

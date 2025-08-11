@@ -1,0 +1,53 @@
+body{
+    background: lightgrey;
+}
+
+.wrapper{
+    background-color: white;
+    width: 720px;
+    margin: 50px auto;
+    padding: 40px 30px 30px 10px;
+}
+
+.row{
+    width: 680px;
+    padding: 10px 0;
+    position: relative;
+    
+}
+
+.row>img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.row>h2 {
+    position: absolute;
+    top: -4px;
+    left: 70px;
+    color: rgb(3, 219, 219);
+    font-size: 16px ;
+}
+.row>p {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    color: #5e5d5d;
+    font-size: 10px ;
+
+}
+
+.row>button {
+    background-color: #ebe8e8;
+    color:#5e5d5d ;
+    width: 48px;
+    height: 20px;
+    border: 0;
+    font-size: 9px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+.hr{
+    border-top: 0.25px solid #eeecec ;
+}

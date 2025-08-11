@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.2</title>
+</head>
+<body>
+    <script>
+        var sum = 0;
+        document.write("<p> your numbers are : ")
+        do {
+            do {
+                temp = prompt("enter a number to add.. (in digits EX.'10')");
+                var num = +temp;
+            } while (isNaN(num)  );
+            if (num != 0) {
+
+                sum += num;
+                document.write(num + "+");
+            } 
+            
+        } while (temp != '0' && sum < 100);
+
+        document.write("0 =" + sum + "</p>")
+    </script>
+</body>
+</html>

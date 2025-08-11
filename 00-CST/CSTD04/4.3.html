@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4.3</title>
+</head>
+<body>
+    <script>
+        var arr = [10.2, 20, 34, 333.12345];
+        len = 0;
+        for (var index = 0; index < arr.length; index++) {
+            if (arr[index].toString().length > len) len = arr[index].toString().length;
+        }
+
+        for (var index = 0; index < arr.length; index++) {
+            document.writeln ('<p>' + arr[index].toPrecision(len) + '</p>');
+        }
+
+    </script>
+</body>
+</html>

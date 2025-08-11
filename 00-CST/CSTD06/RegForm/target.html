@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 06 - welcome</title>
+</head>
+<body>
+    <script>
+        var search = location.search;
+        var uname =  search.slice(1, search.indexOf('&')).split('=')[1];
+
+        search = search.slice((search.indexOf('&')+1));
+        var age = search.slice(1, search.indexOf('&')).split('=')[1]; 
+
+        search = search.slice((search.indexOf('&')+1));
+        var gndr = search.slice(0, search.indexOf('&')).split('=')[1];
+
+        search = search.slice((search.indexOf('&')+1));
+        var clr = search.slice(0).split('=')[1];
+
+        if(gndr == 'male') {
+            document.writeln('<img src="m.png" />');
+        }else {
+            document.writeln('<img src="f.png" />');
+        }
+
+        
+        document.writeln('<span style = " font-weight: bold;"> Welcome <span style="color: ' + clr + ';"> ' +uname + '</span></span>');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+</head>
+<body>
+   
+    <script>
+        /* var degrees = [
+            [1,4],
+            [2,5],
+            [3,6]
+        ]; */
+
+        do {
+            var temp = prompt("enter number of Students ... ");
+            } while ( isNaN(+temp) ||(temp != '0' && +temp == 0) );
+        var students = +temp;
+
+        do {
+            var temp = prompt("enter number of courses ... ");
+            } while ( isNaN(+temp) ||(temp != '0' && +temp == 0) );
+        var courses = +temp;
+
+        var degrees = []
+            
+        for (let i = 0; i < courses; i++) {
+            var temparr=[];
+            for (let j = 0; j < students; j++) {
+                do {
+            temp = prompt('enter degree of course '+ (i+1) + 'for student '+ (j+1));
+            } while ( isNaN(+temp) ||(temp != '0' && +temp == 0) );
+                temparr[j] = +temp;
+            }
+            degrees[i] = temparr ;
+        }
+
+        /* alert(degrees); */
+
+
+        function showData(_array) {
+            for (let i = 0; i < _array.length; i++) {
+            var total= 0;
+            document.writeln('<tr>');
+            for (let j = 0; j < _array[i].length; j++) {
+              document.writeln('<td>'+ _array[i][j] +'</td>');
+              total += _array[i][j];
+            }
+            document.writeln('<td>'+ total +'</td>');
+            document.writeln('<tr>');
+        }
+            
+        }
+        
+        /* function showData(_array) {
+            var total = 0;
+            document.writeln('<tr>');
+            for (let i = 0; i < _array.length; i++) {
+                document.writeln('<td>'+ _array[i] +'</td>');
+                total += _array[i]
+                
+            }
+            document.writeln('<td>'+ total +'</td>');
+            document.writeln('<tr>');
+            
+        } */
+
+
+        /* for (let i = 0; i < degrees.length; i++) {
+                course1[i] = degrees[i][0];
+                course2[i] = degrees[i][1];
+        } */
+
+        /* console.log(course1);
+        console.log(course2); */ 
+        document.writeln(' <table border="1" > <tr>');
+            for (let i = 0; i < students; i++) {
+                document.writeln(' <th>ST'+ (i+1) +'</th>');
+            }
+        document.writeln(' </tr>');    
+        /* showData(course1); */
+        showData(degrees);
+        document.writeln("</table>");
+    </script>
+    
+</body>
+</html>

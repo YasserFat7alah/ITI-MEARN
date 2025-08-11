@@ -1,0 +1,56 @@
+@use "./sass/flags" as *;
+
+// Mixins Import
+@use "./sass/mixins" as *;
+
+// Mixins Import
+@use "./sass/variables" as *;
+
+// Styles 
+@use "./sass/style";
+
+// Font classes
+@use "./sass/fsize";
+
+
+
+
+@include isPhone {
+    body {
+        font-size: 12px;
+        background-color: $bg-primary;
+    }
+}
+
+@include isLaptop {
+    body {
+        font-size: 14px;
+        background-color: $bg-secondary;
+    }
+}
+
+@include isDesktop {
+    body {
+        font-size: 16px;
+        background-color: yellow;
+    }
+}
+
+// @include deviceScreen(321px, 768px) {
+//     body {
+//         font-size: 16px;
+//         background-color: yellow;
+//     }
+// }
+// @include deviceScreen(769px, 1024px) {
+//     body {
+//         font-size: 16px;
+//         background-color: yellow;
+//     }
+// }
+// @include deviceScreen(1024px, 1440px) {
+//     body {
+//         font-size: 16px;
+//         background-color: yellow;
+//     }
+// }

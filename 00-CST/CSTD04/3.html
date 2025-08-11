@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+</head>
+<body>
+    <script>
+        /* Image URL input */
+        do {
+            var temp = prompt("enter image name...");
+            if(temp == undefined) temp = ''; 
+            var img = temp.trim();
+        } while (img == ''||img == null);
+
+        /* Font color input */
+        do {
+            temp = prompt("enter font color...");
+            if(temp == undefined) temp = ''; 
+            var font = temp.trim();
+        } while (font ==''|| font == null);
+
+        /* Elements Hardcoded */
+        document.write('<p style="color:'+font+';">This is your image</p> <img src="'+img+'" alt="your img" style="border: 3px solid '+font+';">');
+    </script>
+</body>
+
+</html>

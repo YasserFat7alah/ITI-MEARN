@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1.1</title>
+</head>
+<body>
+    <script>
+        do {
+            var temp = prompt("Enter the message ...");
+            if (temp == undefined) temp = '';
+            var msg = temp.trim(); 
+        } while (msg == null || msg == "");
+
+        for (let index = 1; index < 7; index++) {
+            document.writeln('<h' + index +'>' + msg + ' :num ' + index + '</h' + index + '>')
+            
+        }
+    </script>
+</body>
+</html>

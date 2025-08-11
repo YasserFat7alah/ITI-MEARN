@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02 - Form Validation</title>
+
+    <style>
+        *{
+            margin: 10px;
+        }
+
+        .err {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="server.html">
+        <!-- NAME -->
+        <label for="uname">Name: </label>
+        <input type="text" name="uname" id="uname" placeholder="Enter Full name" /> <span id="nameerr" class="err"></span> <br>
+
+        <!-- COUNTRY -->
+        <label for="country">Country: </label>
+        <select name="country" id="country">
+            <option value="">SELECT YOUR COUNTRY</option>
+            <option value="Egypt">Egypt</option>
+            <option value="Palestine">Palestine</option>
+            <option value="Sudan">Sudan</option>
+            <option value="SaudiArabia">Saudi Arabia</option>
+        </select> <br>
+
+        <!-- ZIP CODE -->
+         <label for="zipcode">Zip Code: </label>
+         <input type="text" name="zipcode" id="zipcode" placeholder=" "> <br />
+
+         <!-- EMAIL ADDRESS-->
+          <label for="email">Email: </label>
+          <input type="text" name="email" id="email" placeholder="Enter your email"> <span id="mailerr" class="err"> </span> <br />
+
+          <!-- HObbIES -->
+           <label for="hobbies">Hobbies :</label>
+           <input type="checkbox" name="hobbies" id="writting" value="writting"> <span>writting</span>
+           <input type="checkbox" name="hobbies" id="reading" value="reading"> <span>reading</span>
+           <input type="checkbox" name="hobbies" id="swimming" value="swimming"> <span>swimming</span>
+           <input type="checkbox" name="hobbies" id="sleeping" value="sleeping"> <span>sleeping</span> <br>
+
+            <!-- BUTTONS -->
+           <input type="submit" value="Register"> <br>
+           <input type="reset" value="Clear">
+    </form>
+
+    <script>
+        /* SELECTING FORM ELEMENTS */
+        uname = document.getElementById('uname'); // name input
+        country = document.getElementById('country'); // country input
+        zipcode = document.getElementById('zipcode'); // zipcode input
+        email = document.getElementById('email'); // email input
+        hobbies = document.querySelectorAll("input[type=checkbox]"); // hobbies checkboxes
+
+        /* DEFAULT FOCUS */
+        uname.focus();
+
+        /* NAME VALIDATION */
+        uname.addEventListener('blur', function () {
+            nameerr = document.getElementById("nameerr"); // GETTING ERROR AREA
+
+            if (!uname.value) {
+                nameerr.innerText= "Name Cannot be empty";
+                uname.focus();
+                uname.select();
+            }
+            else { nameerr.innerText= " ";}
+        });
+
+        /* COUNTRY AND ZIPCODE INTERCONNECTION */
+        country.addEventListener('change', function (e) { 
+            if(country.value) {
+                switch (country.value) {
+                    case 'Egypt':
+                        zipcode.value = '1111'
+                        break;
+
+                    case 'Palestine':
+                        zipcode.value = '2222'
+                        break;
+
+                    case 'SaudiArabia':
+                        zipcode.value = '2255'
+                        break;
+
+                    case 'Sudan':
+                        zipcode.value = '4444'
+                        break;
+                
+                    default:
+                        break;
+                }
+            }else  zipcode.value = ' ';
+          });
+
+          /* ZIPCODE MANUAL UPDATE DISABLED */
+          zipcode.addEventListener('keydown', function(e) { e.preventDefault(); });
+        
+         /* EMAIL VALIDATION*/ 
+         function validEmail() { return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.exec(email.value) } // REGEX
+
+
+         email.addEventListener('blur', function () {
+            mailerr = document.getElementById("mailerr");
+            if (!validEmail()) {
+                mailerr.innerText= "invalid email";
+                email.focus();
+                email.select();
+            }
+            else { mailerr.innerText= " ";}
+        });
+
+
+        
+
+
+        this.document.forms[0].addEventListener('submit', function (e) {
+                var uhobbies =[];
+
+                for (let i = 0; i < hobbies.length; i++) { 
+                    if(hobbies[i].checked) uhobbies.unshift(hobbies[i].value); 
+                };
+
+                if(!(uname.value && validEmail() && uhobbies.length && country.value)) {
+                    alert("your data needs to be valid")
+                    e.preventDefault();
+                }
+        });
+
+
+        this.document.forms[0].addEventListener('reset', function (e) { if(!confirm('are you sure?')) e.preventDefault(); });
+
+
+        
+        
+    </script>
+</body>
+</html>

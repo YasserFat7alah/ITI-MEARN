@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+    <style>
+        span {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Adding -- Multiplying -- Dividing 
+    </h1>
+    <hr />
+    <script>
+        var num = [];
+        var proceed = true;
+        var temp = '';
+        do {
+            do {
+                temp = prompt("enter the first num.. (in digits EX.'10')");
+            } while (temp != '0' && +temp == 0);
+            num[0] = +temp;
+        } while (isNaN(num[0])|| !proceed  );
+
+        do {
+            do {
+                temp = prompt("enter the second num.. (in digits EX.'10')");
+            } while (temp != '0' && +temp == 0);
+            num[1] = +temp
+            if(num[1] == 0) proceed = confirm (' second value will be set to 0 (this may cause issues in divison)')
+        } while (isNaN(num[1])|| !proceed );
+        
+        do {
+            do {
+                temp = prompt("enter the third num.. (in digits EX.'10')");
+            } while (temp != '0' && +temp == 0);
+
+            num[2] = +temp
+            if(num[2] == 0) proceed = confirm (' second value will be set to 0 (this may cause issues in divison)')
+        } while (isNaN(num[2])|| !proceed );
+        
+        document.writeln('<h3><span>Sum of the 3 values is : </span>'+ num[0]+'+'+ num[1] + '+' + num[2] +'='+ (num[0]+num[1]+num[2]) +'</h3> ');
+        document.writeln('<h3><span>Multiplication of the 3 values is : </span>'+ num[0] + '*' + num[1] + '*' + num[2] + '=' + (num[0]*num[1]*num[2]) + '</h3> ');
+        if(num[0]== 0 && num[2]== 0) {
+            document.writeln('<h3><span>Division of the 3 values is : </span>'+ num[0]+'/'+ num[1] + '/' + num[2] +'='+ 'Operation Cannot be done' +'</h3> ');
+        }else {
+        document.writeln('<h3><span>Division of the 3 values is : </span>'+ num[0]+'/'+ num[1] + '/' + num[2] +'='+ (num[0]/num[1]/num[2]) +'</h3> ');
+        }
+    </script>
+
+   
+</body>
+</html>

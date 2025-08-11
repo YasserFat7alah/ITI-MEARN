@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05 - Bottle Game</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: grey;
+        }
+
+        .wrapper {
+            width: 900px;
+            background-color: white;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+
+        h3 {
+            padding-top: 30px;
+            text-align: center;
+            color: rgb(76, 175, 142);
+        }
+
+        h3 span {
+            color: black;
+        }
+
+        .thumbnail {
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .thumbnail img {
+            width: 500px;
+            border: 2px yellow solid;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .data {
+
+            text-align: center;
+            padding: 0px 40px;
+            margin: 40px 0;
+        }
+
+        input[type=button] {
+            border: 0;
+            outline: none;
+            width: 80px;
+            color: white;
+            margin: 0px 20px;
+            font-size: 20px;
+            padding: 15px 10px 0 10px;
+             background-color: green;
+        }
+
+        input[type=text] {
+            border: 1px solid green;
+            outline: none;
+            width: 400px;
+            height: 20px;
+            color: rgb(0, 0, 0);
+            margin: 0px 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #outField {
+            display: inline-block;
+            border: 1px solid #090080;
+            width: 400px;
+            height: 20px;
+            color: rgb(0, 0, 0);
+            margin: 0px 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #outBtn {
+            background-color: #090080 ;
+            position: relative;
+            top: -10px;
+        }
+
+        #inBtn {
+           position: relative;
+            top: 8px; 
+        }
+
+        #errs {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h3>Bottle <span>Game</span></h3>
+
+        <div class="thumbnail">
+            <img src="bottle.png" alt="">
+        </div>
+
+        <p>
+        Enter Names of the players
+        </p>
+
+        <div class="data">
+            <input type="button" value="Input" id="inBtn">
+            <input type="text" name="players" placeholder="yasser,mohamed,fathallah,barakat" id="inField">
+        </div>
+
+        <div class="data">
+            <input type="button" value="Output" id="outBtn" onclick="outPlayers()">
+            <div id="outField"> </div>
+            <div id="errs"></div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function outPlayers() {
+            temp = inField.value; 
+            names = temp.split(',');
+            names = names.map(function (_val) { return _val.trim()});
+
+            players = names.slice().filter(function(_val) { return (isNaN(parseInt(_val)) && _val != '')});
+
+            
+            if(players.length < 2 || !temp ) { 
+                errs.innerText = "Enter a valid input format" ;
+                outField.innerText = "ERRRRRRRRR";
+            }else {
+                if(players.length < names.length) { errs.innerText = "Some Inputs are not names"}
+                    else { errs.innerText = ' '; }
+                
+                var p1 = Math.floor((Math.random())*players.length);
+
+                do {
+                    var p2 = Math.floor((Math.random())*players.length);
+                } while (p1 == p2);
+
+                outField.innerText = names[p1] + ' , ' + names[p2];
+            }
+
+            
+
+            
+            /* alert(names[p1] + ', ' + names[p2]); */
+        }
+    </script>
+</body>
+</html>

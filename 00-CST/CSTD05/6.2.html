@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 6.2</title>
+</head>
+<body>
+    <!-- 
+    6.2 - receive an array of numbers from user it's size will determined from user , then receive it and make sure all values is Number
+	then ask user to enter one of the following letter
+	a : to display array with the same receiving order
+	b : to display array with ascending order
+	c : to display array with descending order
+	d : to reversed version of original array 
+	e : to display even numbers only from array if there no even numbers , display alert to inform user with that
+	f : receive number from user then display all numbers from array which divisible by received number 
+            , if there no result inform user with that
+	g : display new array with 30% discount for all numbers in original array
+	h : display string which represent all numbers of array concated with ***
+
+	after each selected choice you have to ask user if he | she want to repeate running  -->
+
+    <script>
+        do {
+            var size = +prompt ("array size?")
+        } while (size == 0 || isNaN(size));
+
+        nums = [];
+        for (let i = 0; i < size; i++) {
+            do {
+                var temp = prompt("enter number :" + (i+1));
+            } while ( isNaN(+temp) ||(temp != '0' && +temp == 0) );
+            nums[i] = +temp;
+        }
+
+        letters = ['a', 'b' , 'c' , 'd' , 'e' ,'f' , 'g' , 'h']
+        
+
+        do {
+            do {
+                var action = prompt("Enter action's letter.. \n a : to display array with the same receiving order \n b : to display array with ascending order \n c : to display array with descending order \n d : to reversed version of original array \n e : to display even numbers only \n f : divisible number  \n g : 30% discount for all numbers \n h : concat with***");
+            } while (!(letters.some(function(_val) { return _val == action; } )));
+
+            switch (action) {
+            case 'a':
+                alert( nums );
+                break;
+            
+            case 'b':
+                alert( nums.slice().sort(function(a, b){ return a-b }) );
+                break;
+        
+            case 'c':
+                alert( nums.slice().sort(function(a, b){ return b-a }) );
+                break;
+            
+            case 'd':
+                alert( nums.slice().reverse() );
+                break;
+            
+            case 'e':
+                var displayed = nums.slice().filter(function(_val){ return _val%2 == 0 });
+                if (displayed.length == 0) {
+                    alert( '<h2> There is no evens</h2>');
+                } else {
+                    alert( displayed );
+                }
+                break;
+
+            case 'f':
+                do {
+                    var divis = +prompt ("Number to divide?")
+                } while (divis == 0 || isNaN(divis));
+
+                var displayed = nums.slice().filter(function(_val){ return _val%divis == 0 });
+                if (displayed.length == 0) {
+                    alert( '<h2> There is no numbers divisable by '+ divis );
+                } else {
+                    alert( displayed );
+                }
+                break;
+
+                case 'g':
+                alert( nums.slice().map(function(_val){ return _val*0.3 }) );
+                break;
+
+                case 'h':
+                alert( nums.slice().reduce(function(p, c){ return p += '***' +c }) );
+                break;
+        }
+        var more = confirm("Want to do another operation?")
+        } while (more);
+
+        console.log(nums);
+    </script>
+    
+</body>
+</html>

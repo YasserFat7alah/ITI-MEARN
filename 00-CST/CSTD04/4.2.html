@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4.2</title>
+</head>
+<body>
+    <script>
+        var supportedLocales = [ 'en-US', 'en-GB', 'ar-EG', 'fr-FR', 'de-DE', 'es-ES', 'hi-IN', 'zh-CN', 'ja-JP'];
+        do {
+            var temp = prompt("enter a number .. (in digits EX. 10 )");
+        } while ( isNaN(+temp) ||(temp != '0' && +temp == 0) );
+        var num = +temp;
+        
+        do {
+            var temp = prompt('Enter the locale ... \n EX. \n en-US\n en-GB\n ar-EG\n fr-FR\n de-DE\n es-ES\n hi-IN\n zh-CN\n ja-JP');
+            if (temp == undefined) temp = "";
+            var locale = temp.trim(); 
+            var notValid = true;
+
+            for (var index = 0; index < supportedLocales.length; index++) {
+                if (supportedLocales[index] == locale)  {
+                    notValid = false ;
+                    break;
+                }              
+            }
+    
+        } while (notValid);
+        tnum = (num).toLocaleString(locale);
+
+
+        document.writeln ('<p> Number with default Locale : ' + num + '<br> Number with ('+ locale +') Locale : ' + tnum + '</p>')
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK 01</title>
+</head>
+<body>
+    <script>
+        var canceled = false;
+        do {
+            do {
+                var valid = false;
+                var temp = prompt("Enter values Ex. (2,6,8,9,10)");
+                if (temp != null) temp.trim();
+            } while (temp == '');
+            
+            if ( temp == null) canceled = !confirm('Do you really want to cancel');
+            else if (temp != null && temp != ''){
+                var tempArr = temp.split(',');/* TAKE NUMBERS */
+                var arr = tempArr.filter(function(_val) { if(_val.trim() == '' ) { return false } else { return !isNaN(+(_val)) };
+                });
+
+                if (arr.length == 0) {
+                    console.log("please enter input in a valid format");
+                    alert("please enter input in a valid format");
+                    canceled = true;
+                } else {
+                
+                    /* CONVERT DATA TYPES TO NUMBER */
+                    arr.forEach(function (_val, _index) { arr[_index]= +_val });
+                    
+                    if(tempArr.length > arr.length) {
+                        alert("Some data inputs were not numbers ... ");
+                        console.log("Some data inputs were not numbers ... ");
+                    }
+                    console.log(arr);
+
+                    /* for (let i = arr.length-1 ; i >= 0; i--) {
+                        for (let j = i-1; j >= 0; j--) {
+                            if( arr[i] == arr[j] ) {console.log ("repeated row :" + (j+1))};
+                            
+                            
+                        }
+                        
+                    } */
+
+                    document.writeln('<table style=" border: 2px solid red ;" > <tr> <th> Values </th> </tr>');
+                    for (let i = 0; i < arr.length; i++) {
+                        document.writeln('<tr > <td style=" border: 1px solid red ;" >'+ arr[i] + '</td> </tr>')
+                    }
+                    document.writeln('</table>');
+                    document.writeln('<p> Repeated : </p>');
+
+                    let seen = [];
+
+                    function repetion(_val, _index) {
+                        if (seen.indexOf(_val) != -1) {
+                            console.log("repeated row: " + (_index + 1));
+                            document.writeln('<p> Row Number : '+ (_index + 1) +' </p>');
+                        } else {
+                            seen.push(arr[_index]);
+                        }
+                    }
+                    arr.filter(repetion);
+
+
+
+
+                    
+
+                    
+
+                    
+
+                }
+                
+
+        }
+        } while (canceled);
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+// load variables
+@use "./variables" as *;
+
+
+.base-box {
+    background-color: $bg-secondary ;
+    margin: $small-margin;
+    font-size: $large-font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.extended-box {
+    @extend .base-box;
+    color: red;
+    background-color: lightgreen;
+    padding: 20px;
+    justify-content: end;
+
+}

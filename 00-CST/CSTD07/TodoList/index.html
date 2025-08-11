@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - TODO ORGANIZER</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: #5a0101;
+        }
+        .wrapper {
+            text-align: center;
+        }
+
+        #taskname {
+            width: 800px;
+            height: 40px;
+            font-size: 18px;
+            box-shadow: 2px 2px 8px gray;
+            border: 0;
+            border-radius: 10px;
+            padding: 5px 25px;
+        }
+
+
+        #addTask {
+            width: 80px;
+            height: 40px;
+            border: 0;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            background-color: #6e6e6e;
+            margin: 0 40px;
+        }
+
+        #addTask:hover,
+        #addTask:focus {
+            background-color: #4b4a4a;
+            cursor: pointer;
+        }
+
+        .todo {
+            text-align: center;
+            margin: 30px auto;
+        }
+        
+        table {
+            width: 1200px;
+            display: inline-block;
+        }
+
+        tr {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        th {
+            background-color: rgb(180, 0, 0);
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .col {
+            width: 200px;
+        }
+
+        .content {
+            width: 800px;
+            
+        }
+
+        .odd > td.col {
+            background-color: #c7c7c7;
+        }
+        .odd > td.content {
+            background-color: #e9e9e9;
+            padding-left: 30px;
+        }
+
+        .even > td.col {
+            background-color: #c4a4a4;
+        }
+
+        .even > td.content {
+            background-color: #e4c4c4;
+            padding-left: 30px;
+        }
+
+        td> input[type=button] {
+            color: rgb(197, 0, 0);
+            background-color: lab(16.49% 37.18 25.15 / 0);
+            border: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+        td> input[type=button]:hover,
+        td> input[type=button]:focus {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <h1> TODO Oraganizer</h1>
+
+    <div class="wrapper">
+        <input type="text" name="task" id="taskname" placeholder="Enter Task Name">
+        <input type="button" name="addTask" id="addTask" value="Add" onclick="addTaskfn()">
+    </div>
+    <div class="todo">
+        <table >
+            <tr class="header">
+                <th class="col">Done</th>
+                <th class="content">Task</th>
+                <th class="col">Delete</th>
+            </tr>
+        </table>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+*{ /* Rester */
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Outer content */
+body {
+    background-image: url(bg.png);
+    width: 1120px;
+    margin: 0 auto;
+}
+
+#topimg {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px 0;
+}
+
+/* Inner Content  */
+.wrapper  {
+    width: 920px;
+    border: 4px grey solid;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Side Bar */
+
+.aside {
+    float: right;
+    background-color: #a2b964;
+}
+
+.as-title {
+    background-color: #000;
+    width: 231px;
+    height: 50px;
+    color: white;
+    position: relative;
+}
+
+.as-title>h3 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+dl {
+    background-color: #a2b964;
+    width: 231px;
+    position: relative;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 10px;
+}
+dl dt {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px 0 3px 10px;
+}
+
+dl dd {
+    font-size: 10px;
+    padding: 0 20px 0 40px;
+}
+
+/* Top Bar */
+.topbar {
+    height: 100px;
+    position: relative;
+}
+
+#hbg{
+    width: 689px;
+    height: 100px ;
+
+}
+
+#icon {
+    height: 91px;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+}
+
+#t95 {
+    font-size: 70px;
+    color: red;
+    position: absolute;
+    top: 10px;
+    left: 110px;
+    font-weight: bolder; 
+}
+
+#reviews {
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    top: 76px;
+    left: 260px;
+}
+/* Posts */
+.content {
+    width: 689px;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+/* Column */
+.col  {
+    display: inline-block;
+    width: 325px ;
+    padding: 6px;
+    position: relative;
+}
+
+#col1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 5px;
+}
+
+#col2 {
+    position: absolute;
+}
+
+/* Post */
+.post   {
+    width: 310px;
+    position: relative;
+
+}
+.p-content {  
+    position: relative;
+    background-color: #e1d697;
+    border: 1px solid grey;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.p-content >img {
+    float: left;
+}
+
+.metadata {  
+    text-align: left;
+    padding: 10px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #313131;
+    margin-bottom: 22px;
+}
+.metadata >img {
+    width: 20px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ul {
+    font-style: italic;
+}
+
+.footer {
+    clear: both;
+    background-color: #a2b964;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}

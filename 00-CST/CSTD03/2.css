@@ -1,0 +1,51 @@
+body{
+    background: grey;
+}
+.outer{
+    background-color: #fff;
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 10px;
+}
+h1 {
+    color: #89ac50;
+    text-decoration: underline;
+    text-align: center;
+    background-color: rgb(243, 242, 242);
+}
+
+h2 {
+    color: rgb(137, 172, 80);
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: normal;
+    background-color: rgb(243, 242, 242);
+}
+
+ul.ing  {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li >span {
+    font-weight: bold;
+}
+
+.comment {
+    width: 1010px;
+    background-color: lightyellow;
+    font-style: italic;
+    margin: 20px 40px;
+}
+
+
+a.tlink {
+    display: block;
+    color: #89ac50;
+}
+
+a img  {
+    display: inline-block;
+    width: 80px;
+}

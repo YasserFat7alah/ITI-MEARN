@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+<body>
+    <script>
+        /*
+        2- Define javascript function that takes only 2 arguments operator and any 
+            numbers of integers (using Rest operator) then display the result of operation on 
+            console on one line  (using substitution $ with bactecks ` ) as follow 
+            “result of sum operation for 3,1,6,3 is 13”  
+         */
+
+         /* function */
+         /* let calc = (op, ...nums) => {
+           
+            let ops = ['+', '-', '*'];
+            let res = '';
+            (ops.some((val)=> val== op))? res = eval(nums.join(op)): res = 'Cannot be calculated';
+            console.log(`Result is ${res}`);
+            return res;
+         } */
+
+
+         
+         let calc = (op, ...nums) => {
+           
+            let res = '';
+            /* (ops.some((val)=> val== op))? res = eval(nums.join(op)): res = 'Cannot be calculated';
+            console.log(`Result is ${res}`); */
+
+            switch (op) {
+                case '+':
+                    res = eval(nums.join(op));
+                    console.log(`Result of sum operation is ${res}`);
+                    break;
+
+                case '*':
+                    res = eval(nums.join(op));
+                    console.log(`Result of multiple operation is ${res}`);
+                    break;
+
+                case '-':
+                    res = eval(nums.join(op));
+                    console.log(`Result of subtract operation is ${res}`);
+                    break;
+
+                
+            
+                default:
+                    console.log(`Result cannot be calculated > allowed operators: ['+', '-', '*'] `);
+                    break;
+            }
+            return res;
+         }
+    </script>
+</body>
+</html>

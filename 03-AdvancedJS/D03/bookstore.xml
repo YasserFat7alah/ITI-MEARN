@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bookstore> 
+  <book> 
+    <title>Introduction to programming</title> 
+    <publisher>ITI</publisher> 
+    <isbn>12345</isbn> 
+    <price>100</price> 
+  </book> 
+  <book> 
+    <title>Introduction to DB</title> 
+    <publisher>MCIT</publisher> 
+    <isbn>134545</isbn> 
+    <price>200</price> 
+  </book> 
+  <book> 
+    <title>Introduction to JS</title> 
+    <publisher>MCIT</publisher> 
+    <isbn>142225</isbn> 
+    <price>400</price> 
+  </book> 
+  <book> 
+    <title>Introduction to Design Pattern</title> 
+    <publisher>MU</publisher> 
+    <isbn>134045</isbn> 
+    <price>300</price> 
+  </book> 
+
+</bookstore> 

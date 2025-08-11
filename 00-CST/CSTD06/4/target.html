@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="msg">
+       
+    </p>
+
+    <script>
+        var i = 0;
+        function sendmsg() {
+            
+            var message = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam perferendis ipsa quis laboriosam, numquam earum ad inventore minima vel velit error tempore labore fugiat! Aspernatur cupiditate voluptate dicta commodi ratione.'.split('');
+            msg.innerText += message[i];
+            i++;
+        }
+
+        t = setInterval(sendmsg, 250);
+
+        
+        
+    </script>
+</body>
+</html>
