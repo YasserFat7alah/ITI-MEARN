@@ -1,0 +1,28 @@
+// Fonts
+@font-face {
+    font-family: "Satoshi";
+    src: url('../assets/fonts/Satoshi-Regular.otf');
+}
+@font-face {
+    font-family: "Integral CF";
+    src: url('../assets/fonts/Fontspring-DEMO-integralcf-regular.otf');
+}
+
+%satoshi {
+    font-family: 'Satoshi', serif;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+%integral {
+    font-family: "Integral CF", sans-serif;
+}
+
+
+//Whites
+$white100: white;
+$white200: #F2F0F1;
+$white300: #F0F0F0;
+
+//Blacks
+$black100: black;

@@ -1,0 +1,134 @@
+// Design system loaded
+@use "./design-system.scss" as *;
+
+// Mixins
+@use "./mixins" as *;
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+        font-size: 16px;
+        font-weight: bold;
+        gap: 16px;
+        margin-left: 20px;
+
+        li a {
+            color: $black100;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:hover {
+                background-color: $white300;
+            }
+        }
+    }
+
+
+    i{
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: $white200;
+            border-radius: 50%;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+    .wrapper {
+        height: 64px;
+        font-size: 24px;
+
+        .navigation {
+            gap: 12px;
+            flex-grow: 0.4;
+            display:flex;
+            align-items: center;
+            justify-content: flex-start;
+            
+            >nav {
+                order: -1;
+            }
+        }
+
+        .tools {
+            @extend .navigation;
+            flex-grow: 2.5;
+            justify-content: flex-end;
+
+            #searchBar {
+                display: flex;
+                max-width: 550px ;
+                position: relative;
+                height: 30px;
+                border-radius: 15px;
+                background-color: $white300;
+                width: 30px;
+                
+                >i {
+                    position: absolute;
+                    top: 50%;
+                    left: 1px;
+                    transform: translateY(-50%);
+                }
+
+                >input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    padding-left: 35px;
+                    background-color: transparent;
+                    
+                }
+                
+            }
+        }
+    }
+
+}
+
+@include isLaptop {
+    .navbar {
+
+        .wrapper{
+            .navigation{
+            
+                .logo {
+                    order: -1;
+                }
+
+                nav{
+                    order: 1;
+                    >i {
+                        display: none;
+                    }
+
+                    ul {
+                        display: flex;
+
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include isDesktop {
+    .navbar{
+        .wrapper{
+            .tools {
+                #searchBar{
+                    width: fit-content;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}

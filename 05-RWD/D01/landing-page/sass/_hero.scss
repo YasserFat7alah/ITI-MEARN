@@ -1,0 +1,103 @@
+// Design system loaded
+@use "./design-system.scss" as *;
+
+// Mixins
+@use "./mixins" as *;
+
+
+.hero {
+    overflow: hidden;
+    background-color: $white200;
+    .wrapper{
+        flex-direction: column;
+        position: relative;
+        
+        .content{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h2 {
+                padding-top: 40px;
+                font-size: 36px;
+                font-weight: 700;
+            }
+
+            p{
+                color: rgba($black100, $alpha: 0.6);
+                line-height: 20px;
+                font-weight: 400;
+            }
+
+            button{
+                font-size: 16px;
+                padding: 16px;
+                border: none;
+                border-radius: 62px;
+                background-color: $black100;
+                color: $white200;
+                &:hover {
+                    color: $white100;
+                    cursor: pointer;
+                    background-color: rgb(19, 19, 19);
+                }
+            }
+
+            .status {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                &-card {
+                    max-width: 171px ;
+                    min-width: 117px;
+
+                    &-num {
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+
+                    &-title{
+                        font-weight: 400px;
+                        color: rgba($black100, $alpha: 0.6);
+                    }
+                }
+            }
+        }
+
+        >img{
+            position: relative;
+            right: 350px;
+        }
+    }
+}
+
+
+
+@include isDesktop {
+    .hero{
+        .wrapper{
+            flex-direction: row;
+
+            .content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+                width: 50%;
+                height: 100%;
+                justify-content: space-evenly;
+
+                button {
+                    width: 50%;
+                }
+            }
+
+
+            >img {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+// Design system loaded
+@use "./sass/design-system" as *;
+
+// Global Styles
+@use "./sass/global";
+
+// Sign up section
+@use "./sass/signup-msg.scss";
+
+// Navbar section
+@use "./sass/navbar";
+
+// Hero section
+@use "./sass/hero";
+
+// Brands section
+@use "./sass/brands";
+
+// Items section
+@use "./sass/items";

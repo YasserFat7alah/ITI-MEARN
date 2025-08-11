@@ -1,0 +1,56 @@
+//load design system
+@use "./design-system.scss" as *;
+
+// Mixins
+@use "./mixins" as *;
+
+:root {
+    font-size: 14px;
+}
+
+p, a, div button {
+    @extend %satoshi !optional;
+}
+
+h1,h2,h3,h4 {
+    @extend %integral !optional;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white100;
+}
+
+.wrapper {
+    // border: 1px solid red;
+    margin: 0 auto;
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@include isLaptop {
+    :root{
+        font-size: 14px;
+    }
+    
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@include isDesktop {
+    :root{
+            font-size: 16px;
+        }
+
+    .wrapper {
+        max-width: 1240px;
+    }
+}

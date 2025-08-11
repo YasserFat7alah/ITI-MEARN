@@ -1,0 +1,38 @@
+// Design system loaded
+@use "./design-system.scss" as *;
+
+// Mixins
+@use "./mixins" as *;
+
+#signup-msg {
+    background-color: $black100;
+    color: $white200;
+
+    .wrapper{
+        position: relative;
+        padding: 9px 0;
+        font-size: 12px;
+        line-height: 100%;
+    }
+
+    a {
+        color: $white200;
+        &:hover{
+            color: $white100;
+        }
+    }
+
+    #close{
+        position: absolute;
+        right: 0px;
+        transition: all 0.5s;
+
+        &:hover{
+            color: red;
+            cursor: pointer;
+            user-select: none;
+            transform: scale(1.2);
+        }
+    }
+}
+

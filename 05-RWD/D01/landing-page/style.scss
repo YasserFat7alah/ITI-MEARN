@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Figtree:ital,wght@0,800;1,800&display=swap');
+
+:root{
+    font-size: 14px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Candal", sans-serif;
+    transition: all 0.5s;
+}
+body {
+    min-height: 100vh;
+    background-color: white;
+}
+
+%flexwrapperRow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+%flexwrapperCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    
+    // sign up section
+    #signup{
+        @extend %flexwrapperRow;
+        justify-content: center;
+        gap: 18px;
+        font-size: 12px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 8px;
+
+        a {
+            color: white;
+        }
+
+        #close {
+            width: 12px;
+
+            &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        }
+    }
+
+    // navbar
+    nav {
+        @extend %flexwrapperRow;
+        height: 64px;
+        .nav{
+            @extend %flexwrapperRow;
+            gap: 16px;
+        }
+        #quickico{
+            @extend %flexwrapperRow;
+            gap: 12px;
+
+        }
+
+        .ico:hover {
+                border-radius: 50%;
+                background-color: white;
+                cursor: pointer;
+            }
+        
+    }
+
+    .hero{
+        @extend %flexwrapperCol;
+        padding: 0;
+        background-color: #f2f0f1;
+
+        #details {
+            @extend %flexwrapperCol;
+            gap: 20px;
+            padding-top: 40px;
+            .header {
+                font-size: 36px;
+            }
+
+            .description{
+                color: rgba($color: #000000, $alpha: 0.6);
+            }
+
+            >button{
+                border: 0;
+                outline: none;
+                width: 100%;
+                background-color: #000000;
+                color: #f2f0f1;
+                padding: 15px;
+                border-radius: 62px ;
+
+                &:hover {
+                    background-color: #161616;
+                    cursor: pointer;
+                }
+            }
+
+            .stats {
+                @extend %flexwrapperRow;
+                gap: 55px;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .status-card{
+                    width: 150px;
+                    height: 48px;
+                    
+                    >div{
+                        font-size: 22px;
+                    }
+                    >p {
+                        font-size: 10px;
+                        color: rgba($color: #000000, $alpha: 0.6); ;
+                    }
+                }
+            }
+        }
+        >img {
+            width:100%;
+        }
+    }
+    
+
+    #brands {
+        background-color: #000000;
+        padding: 39px 16px;
+        @extend %flexwrapperRow;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 34px;
+
+        .brand {
+            height: 34px;
+        }
+    }
+
+    .products{
+        background-color: white;
+        padding-top: 20px;
+        @extend %flexwrapperRow;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+
+        h3{
+            width: 100%;
+            text-align: center;
+            font-size: 32px;
+            padding: 32px;
+        }
+        .pcard {
+            min-width: 190px;
+            padding: 16px;
+            border-radius: 16px;
+
+            &:hover {
+                background-color: #f2f0f1;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .item {
+                width: 100%;
+            }
+
+            .title {
+                font-size: 16px;
+            }
+            .price{
+                font-size: 20px;
+            }
+
+
+        }
+        
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    *{
+        font-size: 16px;
+    }
+
+    .wrapper{
+        nav{
+            padding: 0px 200px;
+        }
+
+        #signup{
+            font-size: 14px;
+            #close {
+                position: relative;
+                left: 600px;
+            }
+        }
+        .hero {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            // align-items: end;
+            padding: 0px 200px;
+
+        #details {
+            padding: 0;
+            justify-content: start;
+            align-items: start;
+            gap: 10px;
+            height: 100%;
+            .header{
+                font-size: 64px;
+            }
+
+            button {
+                width: 210px;
+            }
+
+            .stats {
+                .status-card {
+                    div {
+                        font-size: 40px;
+                    }
+
+                    p{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+            >img {
+                height: 100%;
+            }
+        }
+        #brands {
+            gap: 106px;
+            padding: 50px 200px;
+            .brand {
+                height: 50px;
+                
+            }
+        }
+
+        .products{
+            padding: 0 200px;
+
+            h3 {
+                font-size: 48px;
+            }
+
+            .pcard{
+                min-width: 350px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,23 @@
+// Design system loaded
+@use "./design-system.scss" as *;
+
+// Mixins
+@use "./mixins" as *;
+
+
+.brands {
+    background-color: $black100;
+    .wrapper{
+        align-items: center;
+        justify-content: space-between ;
+        flex-wrap: wrap;
+        padding: 39px 0;
+        gap: 34px;
+        .brand {
+            min-height: 30px;
+            max-height: 40px;
+            
+        }
+    }
+}
+
