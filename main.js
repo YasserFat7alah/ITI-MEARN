@@ -1,3 +1,7 @@
+window.addEventListener("load", () => {
+  window.scrollTo(0, document.documentElement.scrollHeight);
+});
+
 const tasksData = [
   /* CST TASKS */
   {
@@ -293,10 +297,9 @@ tasksData.forEach((subject) => {
   container.appendChild(subjectDiv);
 });
 
+let notes = document.getElementById("note");
+let close = document.getElementById("close");
 
- let notes = document.getElementById("note");
- let close = document.getElementById("close");
-
- close.addEventListener("click", () => {
-   notes.style.display = "none";
- });
+close.addEventListener("click", () => {
+  notes.style.display = "none";
+});
