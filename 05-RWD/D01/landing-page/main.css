@@ -55,8 +55,11 @@ body {
   }
 }
 #signup-msg {
+  position: sticky;
+  top: 0;
   background-color: black;
   color: #F2F0F1;
+  z-index: 99;
 }
 #signup-msg .wrapper {
   position: relative;
@@ -82,11 +85,16 @@ body {
      -moz-user-select: none;
           user-select: none;
   transform: scale(1.2);
+  background-color: black;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
 }
 .navbar ul {
   list-style: none;
@@ -97,6 +105,7 @@ body {
   font-weight: bold;
   gap: 16px;
   margin-left: 20px;
+  transition: all linear 0.5s;
 }
 .navbar ul li a {
   color: black;
@@ -115,25 +124,26 @@ body {
   cursor: pointer;
   transform: scale(1.1);
 }
-.navbar .wrapper {
-  height: 64px;
+.navbar > .wrapper {
+  height: 94px;
   font-size: 24px;
+  position: relative;
 }
-.navbar .wrapper .navigation, .navbar .wrapper .tools {
+.navbar > .wrapper .navigation, .navbar > .wrapper .tools {
   gap: 12px;
   flex-grow: 0.4;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.navbar .wrapper .navigation > nav, .navbar .wrapper .tools > nav {
+.navbar > .wrapper .navigation > nav, .navbar > .wrapper .tools > nav {
   order: -1;
 }
-.navbar .wrapper .tools {
+.navbar > .wrapper .tools {
   flex-grow: 2.5;
   justify-content: flex-end;
 }
-.navbar .wrapper .tools #searchBar {
+.navbar > .wrapper .tools #searchBar {
   display: flex;
   max-width: 550px;
   position: relative;
@@ -142,13 +152,13 @@ body {
   background-color: #F0F0F0;
   width: 30px;
 }
-.navbar .wrapper .tools #searchBar > i {
+.navbar > .wrapper .tools #searchBar > i {
   position: absolute;
   top: 50%;
   left: 1px;
   transform: translateY(-50%);
 }
-.navbar .wrapper .tools #searchBar > input {
+.navbar > .wrapper .tools #searchBar > input {
   width: 100%;
   height: 100%;
   border: none;
@@ -157,16 +167,16 @@ body {
 }
 
 @media screen and (min-width: 769px) {
-  .navbar .wrapper .navigation .logo, .navbar .wrapper .tools .logo {
+  .navbar .wrapper .navigation .logo, .navbar > .wrapper .wrapper .tools .logo {
     order: -1;
   }
-  .navbar .wrapper .navigation nav, .navbar .wrapper .tools nav {
+  .navbar .wrapper .navigation nav, .navbar > .wrapper .wrapper .tools nav {
     order: 1;
   }
-  .navbar .wrapper .navigation nav > i, .navbar .wrapper .tools nav > i {
+  .navbar .wrapper .navigation nav > i, .navbar > .wrapper .wrapper .tools nav > i {
     display: none;
   }
-  .navbar .wrapper .navigation nav ul, .navbar .wrapper .tools nav ul {
+  .navbar .wrapper .navigation nav ul, .navbar > .wrapper .wrapper .tools nav ul {
     display: flex;
   }
 }
@@ -175,6 +185,35 @@ body {
     width: -moz-fit-content;
     width: fit-content;
     flex-grow: 1;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper .navigation .pop, .navbar > .wrapper .tools .pop {
+    background-color: white;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    top: 100%;
+    left: -35px;
+    height: calc(100vh - 94px);
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.5);
+  }
+  .wrapper .navigation .pop li, .navbar > .wrapper .tools .pop li {
+    width: 100%;
+    height: 60px;
+  }
+  .wrapper .navigation .pop li a, .navbar > .wrapper .tools .pop li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    justify-content: start;
   }
 }
 .hero {
@@ -243,7 +282,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 50;
     width: 50%;
     height: 100%;
     justify-content: space-evenly;
@@ -301,6 +340,8 @@ body {
   justify-content: start;
   align-items: center;
   gap: 20px;
+  transition: all 0.5s;
+  height: 400px;
 }
 .stock .items .wrapper .item {
   min-width: 200px;
@@ -330,12 +371,9 @@ body {
     display: block;
   }
   .stock .items .wrapper {
-    overflow: hidden;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    height: f;
   }
   .stock .items .wrapper .item {
     min-width: 295px;

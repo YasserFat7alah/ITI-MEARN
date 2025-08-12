@@ -41,6 +41,8 @@
             justify-content: start;
             align-items: center;
             gap: 20px;
+            transition: all 0.5s;
+            height: 400px;
 
             .item {
                 @extend %satoshi;
@@ -84,12 +86,9 @@
         }
         .items{
             .wrapper{
-                overflow: hidden;
-                /* flex-wrap: wrap; */
+                flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
-                overflow:hidden;
-                height: f;
 
                 .item {
                     min-width: 295px;

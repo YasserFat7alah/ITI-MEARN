@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- IMPORTING BOOTSTRAP USING CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"
+        defer></script>
+
+    <title>Responsive Form</title>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">Responsive Form</h1>
+        <form id="userForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+
+                <!-- Full Name -->
+                <div class="col-12 col-md-6">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+
+                <!-- Age -->
+                <div class="col-12 col-md-4">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" required min="1">
+                    <div class="invalid-feedback">Please enter your age.</div>
+                </div>
+
+                <!-- Height -->
+                <div class="col-12 col-md-4">
+                    <label for="height" class="form-label">Height in meters</label>
+                    <div class="input-group">
+                        <input type="number" step="0.01" class="form-control" id="height" required>
+                        <span class="input-group-text">m</span>
+                        <div class="invalid-feedback">Please enter your height in meters.</div>
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="col-12 col-md-4">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" required>
+                    <div class="invalid-feedback">Please select your date of birth.</div>
+                </div>
+
+                <!-- Favorite Color -->
+                <div class="col-12 col-md-4">
+                    <label for="color" class="form-label">Favorite Color</label>
+                    <input type="color" class="form-control form-control-color" id="color" value="#000000">
+                </div>
+
+                <!-- Short Bio -->
+                <div class="col-12">
+                    <label for="bio" class="form-label">Short Bio</label>
+                    <textarea class="form-control" id="bio" rows="3" required></textarea>
+                </div>
+
+                <!-- Gender -->
+                <div class="col-12">
+                    <label class="form-label d-block">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required
+                            checked>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                </div>
+
+                <!-- Interests -->
+                <div class="col-12">
+                    <label class="form-label d-block">Interests</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="coding" value="Coding">
+                        <label class="form-check-label" for="coding">Coding</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="music" value="Music">
+                        <label class="form-check-label" for="music">Music</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="sports" value="Sports">
+                        <label class="form-check-label" for="sports">Sports</label>
+                    </div>
+                </div>
+
+                <!-- Country -->
+                <div class="col-12 col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <select class="form-select" id="country" required>
+                        <option value="">Choose...</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Egypt</option>
+                        <option>Other</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your country.</div>
+                </div>
+
+                <!-- Profile Picture -->
+                <div class="col-12 col-md-6">
+                    <label for="profilePic" class="form-label">Profile Picture</label>
+                    <input type="file" class="form-control" id="profilePic" accept="image/*">
+                </div>
+
+            </div>
+
+            <div class="row g-3 mt-4">
+                <button type="submit" class="btn btn-primary col-12 col-md-4">Submit</button>
+            </div>
+        </form>
+
+        <!-- Table to show submitted data -->
+        <h3 class="mt-5">Submitted Data</h3>
+        <div class="mt-3 table-responsive">
+
+            <table class="table  table-bordered " id="dataTable">
+                <thead>
+                    <tr style="text-align: center; vertical-align: middle;">
+                        <th>Image</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Date of Birth</th>
+                        <th>Color</th>
+                        <th>Bio</th>
+                        <th>Gender</th>
+                        <th>Interests</th>
+                        <th>Country</th>
+                        <th style="min-width: 200px;"> </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        const form = document.getElementById('userForm');
+        const table = document.getElementById("dataTable")
+        let img = '';
+        let indexer = '';
+
+        const nameF = document.getElementById('fullName');
+        const emailF = document.getElementById('email');
+        const ageF = document.getElementById('age');
+        const heightF = document.getElementById('height');
+        const dateOfBirthF = document.getElementById('dob');
+        const bioF = document.getElementById('bio');
+        const countryF = document.getElementById('country');
+
+
+        const colorValueF = document.getElementById('color');
+
+        window.addEventListener('load', () => {
+
+            form.addEventListener('submit', function (e) {
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    form.classList.add('was-validated');
+                } else {
+                    e.preventDefault();
+                    addDataToTable(indexer || table.rows.length);
+                    form.reset();
+                    img = '';
+                    form.classList.remove('was-validated');
+                }
+
+            }, false);
+        });
+
+
+        document.getElementById('profilePic').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    img = `<img id="preview" 
+                                src="${ev.target.result}" 
+                                alt="Image Preview" 
+                                class="img-thumbnail img-fluid rounded"
+                                style="max-width: 200px;">`;
+
+                    console.log("Image stored in variable:", img);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Add data to table
+        function addDataToTable(index) {
+
+
+            const name = nameF.value || "";
+            const email = emailF.value || "";
+            const age = ageF.value || "";
+            const height = heightF.value || "";
+            const dateOfBirth = dateOfBirthF.value || "";
+            const interestsF = document.querySelectorAll('input[type="checkbox"]:checked');
+            const interests = Array.from(interestsF).map(checked => checked.value).join(', ') || "";
+            const colorValue = colorValueF.value || "";
+
+            const color = `
+            <span style="background-color:${colorValue}; display:inline-block; width:50px; height:50px; border-radius:25%;"></span><br/>
+            <span> ${colorValue} </span>
+            ` || "";
+
+            const bio = bioF.value || "";
+
+            const gender = document.querySelector('input[name="gender"]:checked')?.value || ''
+            const country = countryF.value;
+
+            const defaultImg = `<img id="preview" 
+                                src="https://static.vecteezy.com/system/resources/previews/003/715/527/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg" 
+                                alt="Image Preview" 
+                                class="img-thumbnail img-fluid rounded"
+                                style="max-width: 200px;">`;
+
+            const imgField = `<div>${img ? img : defaultImg}</div>`
+
+            const row = `
+                        <tr style="text-align: center; vertical-align: middle;" >
+                            <td>${imgField}</td>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${age}</td>
+                            <td>${height} m</td>
+                            <td>${dateOfBirth}</td>
+                            <td>${color}</td>
+                            <td>${bio}</td>
+                            <td>${gender}</td>
+                            <td>${interests}</td>
+                            <td>${country}</td>
+                            <td >
+                                <button class="btn btn-warning btn-sm edit-btn " onclick="updatePerson(event ,${index})">Update</button>
+                                <button class="btn btn-danger btn-sm delete-btn " onclick="deletePerson(${index})">Delete</button>
+                            </td>
+                        </tr>
+                        `;
+            table.rows[index - 1].insertAdjacentHTML('afterend', row);
+            indexer = '';
+        }
+
+
+        function deletePerson(index, force = false) {
+            if (force || confirm("do you really want to delete this record?")) {
+                window.console.log(table.rows[index]);
+                table.rows[index].remove();
+            }
+        }
+
+        function updatePerson(e, index) {
+            indexer = index;
+            const row = table.rows[index];
+
+            img = row.cells[0].children[0].innerHTML;
+            nameF.value = row.cells[1].textContent.trim();
+            emailF.value = row.cells[2].textContent.trim();
+            ageF.value = row.cells[3].textContent.trim();
+            heightF.value = row.cells[4].textContent.replace('m', '').trim();
+            dateOfBirthF.value = row.cells[5].textContent.trim();
+            colorValueF.value = row.cells[6].children[2].textContent.trim();
+            bioF.value = row.cells[7].textContent.trim();
+            const gender = row.cells[8].textContent.trim();
+            document.querySelectorAll(`input[value="${gender}"]`)[0].checked = true;
+            console.log()
+
+
+            const interests = row.cells[9].textContent.trim().split(',');
+            const interestsF = document.querySelectorAll('input[type="checkbox"]');
+
+            countryF.value = row.cells[10].textContent.trim();
+            console.log(row.cells[10].textContent.trim());
+
+            for (let i = 0; i < interestsF.length; i++) {
+                for (let j = 0; j < interests.length; j++) {
+
+                    if (interests[j].trim() == interestsF[i].value.trim()) {
+                        interestsF[i].checked = true;
+                        break;
+                    }
+                    else {
+                        interestsF[i].checked = false;
+                    }
+
+                }
+
+            }
+            deletePerson(index, true);
+
+        }
+
+    </script>
+</body>
+
+</html>
