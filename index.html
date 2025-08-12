@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ITI Tasks</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="05-RWD/D01/landing-page/fa/all.min.css">
 </head>
+
 <body>
-  <div class="caution">
-        Some Tasks are not responsive. For better experience use Desktop :3
+  <div class="note" id="note">
+    <div class="notes">
+      <h3>Important Notes</h3>
+      <ul>
+        <li>Most tasks are meant to demonstrate understanding of the technology, not to serve a complete
+          practical purpose.
+        </li>
+        <li>Some outputs appear in the <span class="highlight">Terminal</span>, so it’s recommended to use <span
+            class="highlight">Developer Tools</span>.
+        </li>
+        <li> Some tasks are not responsive for small screens. For the best experience, use a <span class="highlight">desktop
+            or laptop</span>.
+        </li>
+      </ul>
+    </div>
+    <i class="fa-solid fa-xmark fa-fw" id="close"></i>
   </div>
   <main id="task-container"></main>
 
   <script src="main.js"></script>
 </body>
+
 </html>

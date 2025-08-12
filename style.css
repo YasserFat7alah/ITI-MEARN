@@ -3,17 +3,65 @@ body {
   background: #f9f9f9;
   color: #333;
   margin: 0;
-  padding: 2rem;
+  padding-top: 2.5rem;
 }
 
-.caution {
+
+/* .caution {
     background-color: rgb(255, 238, 0);
-    position: absolute;
+    position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     color: black;
-}
+} */
+ .note {
+      background-color: #fff8e5;
+      border: 1px solid #f0d58c;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      padding: 15px 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      
+ }
+
+ .notes {
+  margin: 0 auto;
+  width: 70%;
+ }
+
+ .note h3 {
+   margin-top: 0;
+   color: #a06b00;
+ }
+
+ .note ul {
+   padding-left: 20px;
+ }
+
+ .note li {
+   margin-bottom: 10px;
+ }
+
+ .highlight {
+   color: #d35400;
+   font-weight: bold;
+ }
+
+ #close {
+   position: fixed;
+   right: 25%;
+   top: 23px;
+   transition: all 0.5s;
+ }
+   #close:hover {
+     color: red;
+     cursor: pointer;
+     user-select: none;
+     transform: scale(1.2);
+   }
 
 main {
   max-width: 900px;

@@ -11,17 +11,21 @@
         }
         #msg {
             padding: 20px;
-            width: 800px;
-            height: 200px;
+            width: 400px;
+            height: 300px;
             border-width: 1px;
             border-color: red;
             border-style: solid;
             margin: 10px;
         }
 
+        .wrapper {
+            width: 500px;
+        }
+
         .style {
             display: inline-block;
-            width: 110px;
+            width: 150px;
             height: 150px;
             padding: 5px;
             margin: 0;
@@ -44,91 +48,94 @@
         Eveniet, voluptatibus. Impedit ut provident fugiat excepturi natus similique molestiae culpa alias, neque illum ipsum consectetur laboriosam nemo, animi nesciunt! Rem fugiat quae itaque ratione facilis optio, illo maxime rerum?
     </div>
 
-    <div class="style">
-        <label for="fontFamily">font family</label>
-        <input type="radio" name="fontFamily" id="" onchange="update()"  value="Arial" checked> <span>Arial</span> <br>
-        <input type="radio" name="fontFamily" id="" onchange="update()"  value="Courier"> <span>Courier</span> <br>
-        <input type="radio" name="fontFamily" id="" onchange="update()"  value="serif"> <span>serif</span> <br>
-        <input type="radio" name="fontFamily" id="" onchange="update()"  value="Georgia"> <span>Georgia</span> <br>
-        <input type="radio" name="fontFamily" id="" onchange="update()"  value="Impact"> <span>Impact</span> <br>
-    </div>
-
-    <div class="style">
-        <label for="textAlign">text align</label>
-        <input type="radio" name="textAlign" id="" onchange="update()" value="center" > <span>center</span> <br>
-        <input type="radio" name="textAlign" id="" onchange="update()" value="left" checked> <span>left</span> <br>
-        <input type="radio" name="textAlign" id="" onchange="update()" value="right"> <span>right</span> <br>
-        <input type="radio" name="textAlign" id="" onchange="update()" value="justify"> <span>justify</span> <br>
-        <br>
-    </div>
-
-    <div class="style">
-        <label for="letterSpacing">letter spacing</label>
-        <input type="radio" name="letterSpacing" id="" onchange="update()" value="normal" checked> <span>normal</span> <br>
-        <input type="radio" name="letterSpacing" id="" onchange="update()" value="-1px"> <span>-1px</span> <br>
-        <input type="radio" name="letterSpacing" id="" onchange="update()" value="2px"> <span>2px</span> <br>
-        <input type="radio" name="letterSpacing" id="" onchange="update()" value="3px"> <span>3px</span> <br>
-        <input type="radio" name="letterSpacing" id="" onchange="update()" value="4px"> <span>4px</span> <br>
-    </div>
-
-    <div class="style">
-        <label for="textTransform">text transform</label>
-        <input type="radio" name="textTransform" id="" onchange="update()" value="none" checked> <span>none</span> <br>
-        <input type="radio" name="textTransform" id="" onchange="update()" value="capitalize"> <span>capitalize</span> <br>
-        <input type="radio" name="textTransform" id="" onchange="update()" value="uppercase"> <span>uppercase</span> <br>
-        <input type="radio" name="textTransform" id="" onchange="update()" value="lowercase"> <span>lowercase</span> <br>
-         <br>
-    </div>
-
-    <div class="style">
-        <label for="textDecoration">text decoration</label>
-        <input type="radio" name="textDecoration" id="" onchange="update()" value="none" checked> <span>none</span> <br>
-        <input type="radio" name="textDecoration" id="" onchange="update()" value="line-through"> <span>line-through</span> <br>
-        <input type="radio" name="textDecoration" id="" onchange="update()" value="overline"> <span>overline</span> <br>
-        <input type="radio" name="textDecoration" id="" onchange="update()" value="underline"> <span>underline</span> <br>
-         <br>
-    </div>
-
-    <div class="style">
-        <label for="borderStyle">border </label>
-        <input type="radio" name="borderStyle" id="" onchange="update()" value="none"> <span>none</span> <br>
-        <input type="radio" name="borderStyle" id="" onchange="update()" value="solid" checked> <span>solid</span> <br>
-        <input type="radio" name="borderStyle" id="" onchange="update()" value="dashed"> <span>dashed</span> <br>
-        <input type="radio" name="borderStyle" id="" onchange="update()" value="dotted"> <span>dotted</span> <br>
-        <input type="radio" name="borderStyle" id="" onchange="update()" value="double"> <span>double</span> <br>
-
-    </div>
-
-    <div class="style">
-        <label for="borderColor">border color</label>
-        <input type="radio" name="borderColor" id="" onchange="update()" value="red" checked> <span>red</span> <br>
-        <input type="radio" name="borderColor" id="" onchange="update()" value="pink"> <span>pink</span> <br>
-        <input type="radio" name="borderColor" id="" onchange="update()" value="blue"> <span>blue</span> <br>
-        <input type="radio" name="borderColor" id="" onchange="update()" value="purple"> <span>purple</span> <br>
-         <br>
-    </div>
-
-    <div class="style">
-        <label for="borderWidth">border width</label>
+    <div class="wrapper">
+        <div class="style">
+            <label for="fontFamily">font family</label>
+            <input type="radio" name="fontFamily" id="" onchange="update()" value="Arial" checked> <span>Arial</span> <br>
+            <input type="radio" name="fontFamily" id="" onchange="update()" value="Courier"> <span>Courier</span> <br>
+            <input type="radio" name="fontFamily" id="" onchange="update()" value="serif"> <span>serif</span> <br>
+            <input type="radio" name="fontFamily" id="" onchange="update()" value="Georgia"> <span>Georgia</span> <br>
+            <input type="radio" name="fontFamily" id="" onchange="update()" value="Impact"> <span>Impact</span> <br>
+        </div>
         
-        <input type="radio" name="borderWidth" id="" onchange="update()" value="1px" checked> <span>1px</span> <br>
-        <input type="radio" name="borderWidth" id="" onchange="update()" value="2px"> <span>2px</span> <br>
-        <input type="radio" name="borderWidth" id="" onchange="update()" value="3px"> <span>3px</span> <br>
-        <input type="radio" name="borderWidth" id="" onchange="update()" value="5px"> <span>5px</span> <br>
-        <input type="radio" name="borderWidth" id="" onchange="update()" value="7px"> <span>7px</span> <br>
-
-    </div>
-
-
-    <div class="style">
-        <label for="backgroundColor">bg color</label>
+        <div class="style">
+            <label for="textAlign">text align</label>
+            <input type="radio" name="textAlign" id="" onchange="update()" value="center"> <span>center</span> <br>
+            <input type="radio" name="textAlign" id="" onchange="update()" value="left" checked> <span>left</span> <br>
+            <input type="radio" name="textAlign" id="" onchange="update()" value="right"> <span>right</span> <br>
+            <input type="radio" name="textAlign" id="" onchange="update()" value="justify"> <span>justify</span> <br>
+            <br>
+        </div>
         
-        <input type="radio" name="backgroundColor" id="" onchange="update()" value="white" checked> <span>white</span> <br>
-        <input type="radio" name="backgroundColor" id="" onchange="update()" value="blue"> <span>blue</span> <br>
-        <input type="radio" name="backgroundColor" id="" onchange="update()" value="yellow"> <span>yellow</span> <br>
-        <input type="radio" name="backgroundColor" id="" onchange="update()" value="green"> <span>green</span> <br>
-        <input type="radio" name="backgroundColor" id="" onchange="update()" value="lightblue"> <span>lightblue</span> <br>
-
+        <div class="style">
+            <label for="letterSpacing">letter spacing</label>
+            <input type="radio" name="letterSpacing" id="" onchange="update()" value="normal" checked> <span>normal</span> <br>
+            <input type="radio" name="letterSpacing" id="" onchange="update()" value="-1px"> <span>-1px</span> <br>
+            <input type="radio" name="letterSpacing" id="" onchange="update()" value="2px"> <span>2px</span> <br>
+            <input type="radio" name="letterSpacing" id="" onchange="update()" value="3px"> <span>3px</span> <br>
+            <input type="radio" name="letterSpacing" id="" onchange="update()" value="4px"> <span>4px</span> <br>
+        </div>
+        
+        <div class="style">
+            <label for="textTransform">text transform</label>
+            <input type="radio" name="textTransform" id="" onchange="update()" value="none" checked> <span>none</span> <br>
+            <input type="radio" name="textTransform" id="" onchange="update()" value="capitalize"> <span>capitalize</span> <br>
+            <input type="radio" name="textTransform" id="" onchange="update()" value="uppercase"> <span>uppercase</span> <br>
+            <input type="radio" name="textTransform" id="" onchange="update()" value="lowercase"> <span>lowercase</span> <br>
+            <br>
+        </div>
+        
+        <div class="style">
+            <label for="textDecoration">text decoration</label>
+            <input type="radio" name="textDecoration" id="" onchange="update()" value="none" checked> <span>none</span> <br>
+            <input type="radio" name="textDecoration" id="" onchange="update()" value="line-through"> <span>line-through</span>
+            <br>
+            <input type="radio" name="textDecoration" id="" onchange="update()" value="overline"> <span>overline</span> <br>
+            <input type="radio" name="textDecoration" id="" onchange="update()" value="underline"> <span>underline</span> <br>
+            <br>
+        </div>
+        
+        <div class="style">
+            <label for="borderStyle">border </label>
+            <input type="radio" name="borderStyle" id="" onchange="update()" value="none"> <span>none</span> <br>
+            <input type="radio" name="borderStyle" id="" onchange="update()" value="solid" checked> <span>solid</span> <br>
+            <input type="radio" name="borderStyle" id="" onchange="update()" value="dashed"> <span>dashed</span> <br>
+            <input type="radio" name="borderStyle" id="" onchange="update()" value="dotted"> <span>dotted</span> <br>
+            <input type="radio" name="borderStyle" id="" onchange="update()" value="double"> <span>double</span> <br>
+        
+        </div>
+        
+        <div class="style">
+            <label for="borderColor">border color</label>
+            <input type="radio" name="borderColor" id="" onchange="update()" value="red" checked> <span>red</span> <br>
+            <input type="radio" name="borderColor" id="" onchange="update()" value="pink"> <span>pink</span> <br>
+            <input type="radio" name="borderColor" id="" onchange="update()" value="blue"> <span>blue</span> <br>
+            <input type="radio" name="borderColor" id="" onchange="update()" value="purple"> <span>purple</span> <br>
+            <br>
+        </div>
+        
+        <div class="style">
+            <label for="borderWidth">border width</label>
+        
+            <input type="radio" name="borderWidth" id="" onchange="update()" value="1px" checked> <span>1px</span> <br>
+            <input type="radio" name="borderWidth" id="" onchange="update()" value="2px"> <span>2px</span> <br>
+            <input type="radio" name="borderWidth" id="" onchange="update()" value="3px"> <span>3px</span> <br>
+            <input type="radio" name="borderWidth" id="" onchange="update()" value="5px"> <span>5px</span> <br>
+            <input type="radio" name="borderWidth" id="" onchange="update()" value="7px"> <span>7px</span> <br>
+        
+        </div>
+        
+        
+        <div class="style">
+            <label for="backgroundColor">bg color</label>
+        
+            <input type="radio" name="backgroundColor" id="" onchange="update()" value="white" checked> <span>white</span> <br>
+            <input type="radio" name="backgroundColor" id="" onchange="update()" value="blue"> <span>blue</span> <br>
+            <input type="radio" name="backgroundColor" id="" onchange="update()" value="yellow"> <span>yellow</span> <br>
+            <input type="radio" name="backgroundColor" id="" onchange="update()" value="green"> <span>green</span> <br>
+            <input type="radio" name="backgroundColor" id="" onchange="update()" value="lightblue"> <span>lightblue</span> <br>
+        
+        </div>
     </div>
 
     
