@@ -203,15 +203,15 @@ const tasksData = [
         tasks: [
           {
             name: "Task 01: Pesaude classical Inheritance",
-            url: "03-AdvancedJS/D02/Task01/person.html",
+            url: "03-AdvancedJS/D01/D02/Task01/person.html",
           },
           {
             name: "Task 02: Prototypal Inheritance",
-            url: "03-AdvancedJS/D02/Task01/shape.html",
+            url: "03-AdvancedJS/D01/D02/Task01/shape.html",
           },
           {
             name: "Task 02: Enhanced Prototypal Inheritance",
-            url: "03-AdvancedJS/D02/Task02/bank.html",
+            url: "03-AdvancedJS/D01/D02/Task02/bank.html",
           },
         ],
       },
