@@ -35,5 +35,29 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
-        renderPage(currentPage);
-      });
+  renderPage(currentPage);
+  
+  const sections = document.querySelectorAll("section");
+
+  const navLinks = document.querySelectorAll("nav a");
+
+  const observer = new IntersectionObserver((entries) => {
+    console.log(entries)
+    entries.forEach(entry => {
+      
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove("active"));
+        console.log(entry.target.id)
+        const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: "-80px 0px 0px 0px"
+   });
+
+  sections.forEach(section => observer.observe(section));
+});
+      
+ 
