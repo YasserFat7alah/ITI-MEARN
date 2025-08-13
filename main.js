@@ -257,6 +257,15 @@ const tasksData = [
           },
         ],
       },
+      {
+        day: "Day 04 - Bootstrap 5 - Responsive Design",
+        tasks: [
+          {
+            name: "Responsive Blog Landing Page",
+            url: "05-RWD/D03-BS/index.html",
+          }
+        ],
+      },
     ],
   },
 ];
