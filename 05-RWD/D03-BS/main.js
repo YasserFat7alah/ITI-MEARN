@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }, {
-    threshold: 0.2,
-    rootMargin: "-80px 0px 0px 0px"
+    threshold: 0.6,
+    rootMargin: "-100px 0px 0px 0px"
    });
 
   sections.forEach(section => observer.observe(section));
