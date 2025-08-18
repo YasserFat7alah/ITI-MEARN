@@ -268,6 +268,16 @@ const tasksData = [
       },
     ],
   },
+  {
+    subject: "JQUERY",
+    days: [
+      {
+        day: "Day 01: Animations & events",
+        tasks: [{ name: "Animate on events", url: "06-JQUERY/D01/index.html" }],
+      },
+     
+    ],
+  },
 ];
 
 const container = document.getElementById("task-container");

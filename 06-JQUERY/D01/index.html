@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery Day01</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: brown;
+      }
+      .tasks {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 80%;
+        min-height: 90vh;
+      }
+
+      .wrapper {
+        min-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 400px;
+        background-color: rgb(232, 253, 232);
+      }
+
+      h3 {
+        color: rgb(49, 49, 49);
+        border: 1px solid lightgray;
+        padding: 10px;
+        border-radius: 10px;
+        width: 90%;
+        text-align: center;
+      }
+
+      .box {
+        background: green;
+        color: wheat;
+        padding: 10px;
+        margin: 20px 0;
+        cursor: pointer;
+        user-select: none;
+        width: 60%;
+        text-align: center;
+        border-radius: 6px;
+      }
+
+      .element {
+        background: wheat;
+        color: #000;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 60%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DAY 01 TASKS</h1>
+
+    <div class="tasks">
+      <div class="wrapper">
+        <h3>Task 2: Toggle Animation on mouseenter</h3>
+        <div id="toggle-box" class="box">
+          Hover me to hide/show element below
+        </div>
+        <div id="toggle-element" class="element">I will hide/toggle!</div>
+      </div>
+
+      <div class="wrapper">
+        <h3>Task 3: FadeIn/FadeOut on double click</h3>
+        <div id="fade-box" class="box">Double-click me to fade element</div>
+        <div id="fade-element" class="element">I will fade in/out!</div>
+      </div>
+
+      <div class="wrapper">
+        <h3>Task 4: SlideUp/SlideDown Animation on mouseenter</h3>
+        <div id="slide-box" class="box">Hover me to slide element</div>
+        <div id="slide-element" class="element">I will slide up/down!</div>
+      </div>
+
+      <div class="wrapper">
+        <h3>Task 5: Custom Animation On MouseLeave</h3>
+        <div id="animation-box" class="box">
+          Hover then leave me for a custom animation below
+        </div>
+        <div id="animation-element" class="element">I will animate</div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
