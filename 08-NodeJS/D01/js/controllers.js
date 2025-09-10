@@ -1,5 +1,4 @@
-const fs = require("fs");
-const { getNewId ,saveData, readData, hasFlags, handleFlag } = require("./utils.js");
+const { getNewId, saveData, readData, hasFlags, handleFlag } = require("./utils.js");
 
 
 const data = readData()
@@ -7,7 +6,7 @@ const data = readData()
 const statusList = ['to-do', 'in-progress', 'done'];
 
 /* =============== CREATE ===================== */
-function addTodo( _args) {
+function addTodo(_args) {
     if (_args.length === 0) {
         console.log("❌ You must enter the todo title to add");
         return;
@@ -23,17 +22,58 @@ function addTodo( _args) {
 
 /* =============== READ ===================== */
 
-function listTodos() {
-  if (data.length === 0) {
-    console.log("No todos found.");
-    return;
-  }
+function listTodos(_args) {
+    if (data.length === 0) {
+        console.log("No todos found.");
+        return;
+    }
+
+    let toView = data;
+
+    if (hasFlags(_args)) {
+
+        // Handle Status
+        const status = handleFlag(_args, ['--status', '-s']);
+        if (status && !statusList.includes(status.toLowerCase())) {
+            console.log(`❌ Format: status {${status}} must be a value of [${statusList}]`);
+            return;
+        }
+        // Search by Status
+        if (status) toView = toView.filter(todo => todo.status === status.toLowerCase())
+
+        // Handle Title
+        const title = handleFlag(_args, ['--title', '-t']);
+        if (title && (title.startsWith('-') || title.startsWith("'"))) {
+            console.log(`❌ Format: title {${title}} must be followed with a string value in double qoutes..`);
+            return;
+        }
+
+        //Search by Title
+        if (title) toView = toView.filter(todo => todo.title.toLowerCase() === title.toLowerCase());
+
+        // Handle Id
+        id = handleFlag(_args, ['-i', '-id']);
+        if (! +id) {
+            console.log(`❌ Format: id {${id}} must be a number..`);
+            return;
+        }
+
+        //Search by Id
+        if (id) toView = toView.filter(todo => todo.id == id);
+    }
+
+    if (toView.length == 0) {
+        console.log("No todos found.");
+        return;
+    }
+
     console.log("*** Your Todos:");
-    console.log(data)
+    console.log(toView)
+
 }
 
 /* =============== UPDATE ===================== */
-function updateTodo( _args) {
+function updateTodo(_args) {
     if (_args.length < 2) {
         console.log("❌ Format: `node index update [id] [new title]`");
         return;
@@ -49,13 +89,13 @@ function updateTodo( _args) {
             console.log(`❌ Format: id {${id}} must be a number..`);
             return;
         }
-        
+
         newTitle = handleFlag(_args, ['--title', '-t']);
-        if (newTitle && (newTitle.startsWith('-') || newTitle.startsWith("'")) ) {
+        if (newTitle && (newTitle.startsWith('-') || newTitle.startsWith("'"))) {
             console.log(`❌ Format: title {${newTitle}} must be followed with a string value in double qoutes..`);
             return;
         }
-        
+
         newStatus = handleFlag(_args, ['--status', '-s']);
         if (newStatus && !statusList.includes(newStatus.toLowerCase())) {
             console.log(`❌ Format: status {${newStatus}} must be a value of [${statusList}]`);
@@ -65,10 +105,10 @@ function updateTodo( _args) {
     } else {
         id = _args[0];
         newTitle = _args[1];
-        newStatus = _args[2] || ''
+        newStatus = ''
     }
 
-    if (!newTitle || !newStatus) {
+    if (!newTitle && !newStatus) {
         console.log("⚠️ You didnt enter any data to change");
         return;
     }
@@ -80,7 +120,7 @@ function updateTodo( _args) {
     }
 
     if (newTitle) data[index].title = newTitle;
-    if (newStatus) data[index].status = newStatus;
+    if (newStatus) data[index].status = newStatus.toLowerCase();
 
     console.log("✅ The todo has been updated successfully!");
     saveData(data);

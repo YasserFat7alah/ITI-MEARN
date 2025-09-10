@@ -1,10 +1,6 @@
-const fs = require("fs");
-const { flags, addTodo, listTodos, updateTodo, deleteTodo } = require("./controllers");
-
+const { addTodo, listTodos, updateTodo, deleteTodo } = require("./js/controllers");
 
 const [, , command, ...args] = process.argv;
-
-const statusList = ['to-do', 'in-progress', 'done'];
 
 if (command) {
     switch (command.toLowerCase()) {
@@ -14,7 +10,7 @@ if (command) {
             break;
 
         case 'list':
-            listTodos();
+            listTodos(args);
             break;
 
         case 'update':
