@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+const path = "./data/todos.json"
 const flags = ['-s', '--status', '-t', '--title', '-i', '--id'];
 
 
@@ -20,11 +20,11 @@ function getNewId(_data) {
 
 /* ======== READ DATA ======== */
 function readData() {
-    if (!fs.existsSync("./todos.json")) {
+    if (!fs.existsSync(path)) {
         return [];
     }
 
-    const content = fs.readFileSync("./todos.json", "utf-8");
+    const content = fs.readFileSync(path, "utf-8");
     const parsed = JSON.parse(content);
 
     if (Array.isArray(parsed)) {
@@ -36,7 +36,7 @@ function readData() {
 
 /* ======== SAVE DATA ======== */
 function saveData(_data) {
-    fs.writeFileSync('./todos.json', JSON.stringify(_data, null, 2));
+    fs.writeFileSync(path, JSON.stringify(_data, null, 2));
 }
 
-module.exports = { flags, hasFlags, handleFlag, getNewId, readData, saveData };
+module.exports = { hasFlags, handleFlag, getNewId, readData, saveData };
