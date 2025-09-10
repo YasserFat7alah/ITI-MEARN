@@ -1,0 +1,116 @@
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+  body {
+      background: #f5f4f4;
+      color: #272727;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  }
+
+  .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #1d6efa;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+  }
+
+  h2 {
+      color: #6a11cb;
+      margin: 25px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eaeaea;
+  }
+
+  .task {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+    .box {
+        padding: 15px;
+        margin: 15px 0;
+        background: #f0f8ff;
+        border-radius: 8px;
+        border: 1px solid #d0e8ff;
+        min-height: 50px;
+    }
+
+  .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+  }
+
+  button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1d6efa;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+  }
+
+  button:hover {
+      background-color: #6a11cb;
+  }
+
+
+
+  .element-list {
+      list-style-type: none;
+      margin: 15px 0;
+  }
+
+  .element-list li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f0f8ff;
+      border-radius: 5px;
+      border: 1px dashed #2575fc;
+  }
+
+  .ancestor-task {
+      padding: 15px;
+      margin: 15px 0;
+      border: 2px solid #6a11cb;
+      border-radius: 8px;
+  }
+
+  .descendant-task {
+      padding: 15px;
+      margin: 15px 0;
+      border: 2px solid #2575fc;
+      border-radius: 8px;
+  }
+
+  .highlight {
+      background: #ffffcc !important;
+      border: 2px solid #ffcc00 !important;
+  }
+
+  .new-element {
+      background: #e6f7ff;
+      border: 1px solid #91d5ff;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+  }

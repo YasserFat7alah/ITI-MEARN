@@ -1,0 +1,14 @@
+{
+  "name": "ut-d01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^5.10.0"
+  }
+}

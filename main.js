@@ -275,6 +275,10 @@ const tasksData = [
         day: "Day 01: Animations & events",
         tasks: [{ name: "Animate on events", url: "06-JQUERY/D01/index.html" }],
       },
+      {
+        day: "Day 02: Advanced Selection and DOM Manipulation",
+        tasks: [{ name: "DOM Manipulation", url: "06-JQUERY/D02/index.html" }],
+      },
      
     ],
   },

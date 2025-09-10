@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Lab Tasks</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>jQuery Day 02 Tasks</h1>
+
+<!-- TASK 01 : Get & Set Content Using Text() & Html() Methods -->
+        <div class="task">
+            <h2>1. Get & Set Content Using Text() & Html() Methods</h2>
+          <div class="box" id="set-task">
+            <p>
+              Test <b>For</b> content with <em>HTML</em> tags.
+            </p>
+          </div>
+          <div class="buttons">
+            <button id="get-text-btn">Get Text Content</button>
+            <button id="get-html-btn">Get HTML Content</button>
+            <button id="set-text-btn">Set Text Content</button>
+            <button id="set-html-btn">Set HTML Content</button>
+          </div>
+        </div>
+
+<!-- TASK 02 : Add New Element & Content-->
+      <div class="task">
+        <h2>2. Add New Element & Content</h2>
+          <div class="box" id="add-task">
+            <p>Original element</p>
+          </div>
+          <div class="buttons">
+            <button id="before-btn">Add Before</button>
+                <button id="prepend-btn">Prepend New Element</button>
+            <button id="append-btn">Append New Element</button>
+            <button id="after-btn">Add After</button>
+          </div>
+      </div>
+
+<!-- TASK 03 : -->
+      <div class="task">
+        <h2>3. Remove Elements</h2>
+          <ul class="element-list box" id="remove-task">
+            <li>Element 1</li>
+            <li>Element 2</li>
+            <li>Element 3</li>
+            <li>Element 4</li>
+            <li>Element 5</li>
+          </ul>
+          <div class="buttons">
+            <button id="remove-first-btn">Remove First Element</button>
+            <button id="remove-last-btn">Remove Last Element</button>
+            <button id="remove-even-btn">Remove Even Elements</button>
+            <button id="remove-all-btn">Remove All Elements</button>
+          </div>
+      </div>
+
+<!-- TASK 04 : Add & Toggle Class -->
+      <div class="task">
+        <h2>4. Add & Toggle Class</h2>
+          <div class="box" id="class-task">
+            <p>Demo Test to test Lorem, ipsum dolor..</p>
+          </div>
+          <div class="buttons">
+            <button id="add-class-btn">Add Highlight Class</button>
+            <button id="remove-class-btn">Remove Highlight Class</button>
+            <button id="toggle-class-btn">Toggle Highlight Class</button>
+            <button id="add-multiple-btn">Add Multiple Classes</button>
+          </div>
+      </div>
+
+<!-- TASK 05 : Select All Element Ancestors -->
+      <div class="task">
+        <h2>5. Select All Element Ancestors</h2>
+          <div class="ancestor-demo box">
+            <div>
+              Level 1
+              <div>
+                Level 2
+                <div>
+                  Level 3
+                  <div id="target-element">
+                    Target Element
+                  </div>
+                  </div>
+                <div>
+                    level 3
+                    <div>
+                        Sibling Element
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="highlight-ancestors-btn">Highlight Ancestors</button>
+            <button id="reset-ancestors-btn">Reset Ancestors</button>
+          </div>
+      </div>
+
+<!-- TASK 04 : Traversing Down - Targeting and Styling Descendant Elements -->
+      <div class="task">
+        <h2>6. Traversing Down - Targeting and Styling Descendant Elements</h2>
+          <div class="descendant-task">
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            <div>
+              <p>Nested Paragraph 1</p>
+              <p>Nested Paragraph 2</p>
+            </div>
+            <p>Paragraph 3</p>
+          </div>
+          <div class="buttons">
+            <button id="find-all-btn">Find All Paragraphs</button>
+            <button id="find-nested-btn">Find Nested Paragraphs</button>
+            <button id="find-first-btn">Find First Paragraph</button>
+            <button id="reset-descendants-btn">Reset Descendants</button>
+          </div>
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
