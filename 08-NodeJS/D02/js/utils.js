@@ -1,19 +1,7 @@
 import fs from "fs";
 const path = "./data/todos.json"
-const flags = ['-s', '--status', '-t', '--title', '-i', '--id'];
 
-
-export function hasFlags(_args) {
-    return _args.some((arg) => flags.includes(arg));
-}
-
-export function handleFlag(_args, _flags) {
-    const indexOfFlag = _args.findIndex(arg => _flags.includes(arg.toLowerCase()));
-    if (indexOfFlag == -1) return '';
-    return _args[indexOfFlag + 1]
-}
-
-
+/* ======== GENERATE ID ======== */
 export function getNewId(_data) {
     return _data.length > 0 ? _data[_data.length - 1].id + 1 : 1;
 }
