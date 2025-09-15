@@ -4,23 +4,23 @@ import bcryptjs from 'bcryptjs'
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: [true, 'username is required'],
+        required: [true, 'username must be provided'],
         unique: true,
         minlength: [8, 'username must be at least 8 characters']
     },
     password: {
         type: String,
-        required: [true, 'password is required']
+        required: [true, 'password must be provided']
     },
     firstName: {
         type: String,
-        required: [true, 'firstName is required'],
+        required: [true, 'firstName must be provided'],
         minlength: [3, 'firstName min length is 3'],
         maxlength: [15, 'firstName max length is 15']
     },
     lastName: {
         type: String,
-        required: [true, 'lastName is required'],
+        required: [true, 'lastName must be provided'],
         minlength: [3, 'lastName min length is 3'],
         maxlength: [15, 'lastName max length is 15']
     },

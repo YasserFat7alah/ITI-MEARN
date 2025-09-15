@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { authentication, restrictTo } from '../middlewares/auth.js';
+import { auth, restrictTo } from '../middlewares/auth.js';
 import validate from '../middlewares/validator.js';
 import { todoSchema } from './../validators/todoValidator.js';
 import {
@@ -14,7 +14,7 @@ import {
 const router = express.Router()
 
 /* --- --- --- --- MIDDLEWARES --- --- --- --- */
-router.use(authentication);           // AUTHENTICATION
+router.use(auth);           // AUTHENTICATION
 /* --- --- --- --- ----------- --- --- --- --- */
 
 

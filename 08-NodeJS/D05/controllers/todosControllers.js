@@ -31,7 +31,7 @@ const readOne = async (req, res, next) => {
     const { id } = req.params;
     const todo = await todoModel.findById(id);
 
-    if (!todo) return next(new AppError("❌ Todo doesn't exist", 404));
+    if (!todo) return next(new AppError(404, "❌ Todo doesn't exist"));
 
     res.status(200).json({
         status: "success",
@@ -46,7 +46,7 @@ const updateOne = async (req, res, next) => {
 
     if (!title && !status)
         return next(
-            new AppError("⚠️ You must provide title or status to update", 400)
+            new AppError(400, "⚠️ You must provide title or status to update")
         );
 
     const updateFields = {};
@@ -55,7 +55,7 @@ const updateOne = async (req, res, next) => {
         const statusList = ["to-do", "in progress", "done"];
         if (!statusList.includes(status.toLowerCase()))
             return next(
-                new AppError(`❌ Status must be one of [${statusList}]`, 400)
+                new AppError(400, `❌ Status must be one of [${statusList}]`)
             );
         updateFields.status = status.toLowerCase();
     }
@@ -65,7 +65,7 @@ const updateOne = async (req, res, next) => {
         runValidators: true,
     });
 
-    if (!updated) return next(new AppError("❌ Todo not found", 404));
+    if (!updated) return next(new AppError(404, "❌ Todo not found"));
 
     res.status(200).json({
         status: "success",
@@ -78,7 +78,7 @@ const deleteOne = async (req, res, next) => {
     const { id } = req.params;
     const deleted = await todoModel.findByIdAndDelete(id);
 
-    if (!deleted) return next(new AppError("❌ Todo not found", 404));
+    if (!deleted) return next(new AppError(404, "❌ Todo not found"));
 
     res.status(204).json({
         status: "success",

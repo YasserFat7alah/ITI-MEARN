@@ -1,0 +1,6 @@
+Lab tasks
+.....
+-auth and authorization middlewares
+-error handling
+-validation with joi
+-upload file

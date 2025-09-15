@@ -1,8 +1,9 @@
 
 
 const errorHandler = (err, req, res, next) => {
-
+    console.log(err)
     if (err.name === 'CastError') err.statusCode = 501;
+    if (err.name === 'TypeError') err.statusCode = 400;
     //  if (err.code === 11000) ;
     //  if (err.name === 'ValidationError')
     //  if (err.name === 'JsonWebTokenError') 
