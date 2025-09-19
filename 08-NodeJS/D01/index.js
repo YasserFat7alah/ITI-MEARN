@@ -23,7 +23,6 @@ if (command) {
 
         default:
             console.log('⚠️ Unkown Command !!!!!');
-
             break;
     }
 

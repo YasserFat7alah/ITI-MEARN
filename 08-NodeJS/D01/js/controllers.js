@@ -53,7 +53,7 @@ function listTodos(_args) {
 
         // Handle Id
         id = handleFlag(_args, ['-i', '-id']);
-        if (! +id) {
+        if (id && ! +id) {
             console.log(`❌ Format: id {${id}} must be a number..`);
             return;
         }
