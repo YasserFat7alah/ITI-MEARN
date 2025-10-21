@@ -1,0 +1,26 @@
+1- npm create vite@latest react-testing-demo --template react
+cd react-testing-demo
+npm install
+
+
+2 - npm install jest @testing-library/react @testing-library/jest-dom jest-environment-jsdom babel-jest @babel/preset-env @babel/preset-react --save-dev 
+
+3- import react in each component , import '@testing-library/jest-dom'in each testing file
+
+4- create .babelrc and add 
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+
+5- jest.config.js
+
+export default {
+    testEnvironment: "jest-environment-jsdom",
+    transform: {
+      "^.+\\.(js|jsx)$": "babel-jest",
+    },
+    moduleNameMapper: {
+      "\\.(css|less)$": "identity-obj-proxy",
+    },
+  };
+ 
